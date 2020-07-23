@@ -12,7 +12,7 @@ document.onreadystatechange = function () {
 	const home = document.querySelector('.home');
 	const game = document.querySelector('.game');
 	document.querySelector('.num-points').textContent = ptDelta;
-	document.querySelector('.incr-points[value="-1"]').disabled = ptDelta === 5 ? true : false;
+	document.querySelector('.incr-points[value="-1"]').disabled = ptDelta === 1 ? true : false;
 	document.querySelector('.incr-points[value="1"]').disabled = !ptDelta ? true : false;
 	document.querySelector('[name="difficulty"][value="' + difficulty + '"]').checked = true;
 	if (parseInt(localStorage.colorBlind))
@@ -55,10 +55,10 @@ document.onreadystatechange = function () {
 				installPrompt.prompt();
 				break;
 			case 'incr-points':
-				const pd = [5, 10, 20, 30, 40, 50, null];
+				const pd = [1,2,3,4,5,6,7,8,9,10];
 				ptDelta = pd[pd.indexOf(ptDelta) + parseInt(e.target.value)];
 				document.querySelector('.num-points').textContent = ptDelta;
-				document.querySelector('.incr-points[value="-1"]').disabled = ptDelta === 5 ? true : false;
+				document.querySelector('.incr-points[value="-1"]').disabled = ptDelta === 1 ? true : false;
 				document.querySelector('.incr-points[value="1"]').disabled = !ptDelta ? true : false;
 				localStorage.ptDelta = ptDelta || '\u221E';
 				break;
