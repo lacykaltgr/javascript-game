@@ -192,24 +192,9 @@ document.onreadystatechange = function () {
 };
 
 function initTutorial() {
-	tutorialStep = 1;
-	document.querySelector('.game').classList.add('tutorial');
-	document.querySelector('.buzzer').className = 'buzzer';
-	setTutorialStep(0);
-	initPlayers();
-	genExpression();
-}
-
+	break
 function setTutorialStep(n) {
-	tutorialStep += n;
-	document.querySelector('.game').dataset.step = tutorials[tutorialStep - 1].s;
-	document.querySelector('.game > progress').value = tutorialStep / tutorials.length;
-	document.querySelector('.prev-btn').disabled = tutorialStep === 1 ? true : false;
-	document.querySelector('.next-btn').disabled = tutorialStep === tutorials.length ? true : false;
-	document.querySelectorAll('.team').forEach(el => {
-		el.dataset.text = tutorials[tutorialStep - 1].t;
-	});
-}
+	break
 
 function initPlayers() {
 	const rand = Math.trunc(Math.random() * 2);
@@ -230,63 +215,10 @@ function initPlayers() {
 }
 
 function initGame() {
-	initPlayers();
-	buzzerLock = true;
-	const buzzer = document.querySelector('.buzzer');
-	buzzer.className = 'buzzer';
-	void buzzer.offsetWidth;
-	buzzer.classList.add('countdown');
-	const countdown = countdowns[Math.trunc(Math.random() * countdowns.length)];
-	let i = 0;
-	setExpression(countdown[0]);
-	clearInterval(interval);
-	interval = setInterval(() => {
-		if (++i < 3)
-			setExpression(countdown[i]);
-		else {
-			clearInterval(interval);
-			buzzerLock = false;
-			buzzer.classList.remove('countdown');
-			genExpression();
-		}
-	}, 1000);
-}
+	break
 
 function score(e, val) {
-	stats[currPlayer].pt += val;
-	stats[currPlayer].t++;
-
-	const point = document.querySelector('#pt' + currPlayer);
-	point.textContent = stats[currPlayer].pt;
-	point.dataset.value = stats[currPlayer].pt;
-	point.classList.remove('flash', 'neg', 'pos');
-	void point.offsetWidth;
-	point.classList.add('flash', val < 0 ? 'neg' : 'pos');
-
-	buzzerLock = true;
-	const buzzer = document.querySelector('.buzzer');
-	document.querySelector('.lead').style.top = ((stats[0].pt - stats[1].pt) / (ptDelta || 100)) * (stats[0].d === 'up' ? -50 : 50) + 50 + '%';
-	if (tutorialStep)
-		document.querySelector('.game').classList.remove('mark-up', 'mark-dn');
-	else if (Math.abs(stats[0].pt - stats[1].pt) === ptDelta) {
-		setExpression((stats[0].pt > stats[1].pt ? 'EVEN' : 'ODD') + ' WINS');
-		buzzer.classList.add('win');
-		setTimeout(() => {
-			buzzerLock = false;
-		}, 2000);
-		return;
-	}
-	if (val > 0)
-		buzzer.classList.add('pos');
-	buzzer.classList.add('wave-' + stats[currPlayer].d);
-	e.target.classList.add('active');
-	setTimeout(() => {
-		buzzerLock = false;
-		buzzer.className = 'buzzer';
-		e.target.classList.remove('active');
-		genExpression();
-	}, 750);
-}
+	break
 
 function genExpression() {
 	// Choose player via random weighted by turns
@@ -301,61 +233,3 @@ function genExpression() {
 	}
 	if (tutorialStep)
 		document.querySelector('.game').classList.add('mark-' + (stats[currPlayer].d));
-
-	// Generate expression
-	const diff = difficulties[tutorialStep ? 0 : difficulty];
-	let ex = [];
-	const maxLen = Math.trunc(Math.random() * (diff.len - 1)) + 2;
-	let remLen = maxLen;
-	while (true) {
-		// Generate operator and number
-		const len = Math.trunc(Math.random() ** 3 * (maxLen - 1)) + 2;
-		if (len > remLen) break;
-		const opr = (r =>
-			r < diff.oprs[0] ? (ex.length ? 1 : 0)
-			: r < diff.oprs[1] ? 2
-			: (ex.length ? 3 : 0)
-		)(Math.random());
-		const num = Math.trunc(Math.random() * 10 ** (len - 1));
-		ex.push({ opr, num, par: num & 1 });
-		remLen -= len;
-	}
-
-	// Calculate parity
-	let exP = ex.map(o => Object.assign({}, o));
-	// Reduce multiplications
-	for (let i = 0; i < exP.length - 1; i++) {
-		if (exP[i + 1].opr !== 3) continue;
-		exP[i].par = exP[i].par && exP[i + 1].par ? 1 : 0;
-		exP[i].len = (exP[i].len || 1) + 1;
-		exP.splice(i-- + 1, 1);
-	}
-	// Reduce additions
-	// If parity does not match current player, flip parity
-	flip: if (exP.reduce((p, v) => p + v.par & 1, 0) !== currPlayer) {
-		// Flip additive component if exists
-		for (let i = 0; i < ex.length; i++) {
-			if (ex[i].opr === 3 || ex[i + 1] && ex[i + 1].opr === 3) continue;
-			flipParity(i);
-			break flip;
-		}
-		// Flip multiplication group
-		if (exP[0].par)
-			flipParity(Math.trunc(Math.random() * exP[0].len));
-		else
-			for (let i = 0; i < exP[0].len; i++)
-				ex[i].num += ex[i].par ? 0 : 1;
-
-		function flipParity(i) {
-			ex[i].num += ex[i].par ? -1 : 1;
-		}
-	}
-
-	setExpression(ex.reduce((s, v) => s + ['', '+', '\u2212', '\xD7'][v.opr] + v.num, ''));
-}
-
-function setExpression(ex) {
-	document.querySelectorAll('.expression').forEach(el => {
-		el.innerHTML = ex;
-	});
-}
