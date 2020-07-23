@@ -197,22 +197,7 @@ function setTutorialStep(n) {
 	break
 
 function initPlayers() {
-	const rand = Math.trunc(Math.random() * 2);
-	document.querySelector('.up > .player').textContent = rand ? 'Even' : 'Odd';
-	let point = document.querySelector('.up > .point');
-	point.id = 'pt' + (rand ? 0 : 1);
-	point.textContent = 0;
-	document.querySelector('.dn > .player').textContent = rand ? 'Odd' : 'Even';
-	point = document.querySelector('.dn > .point');
-	point.id = 'pt' + (rand ? 1 : 0);
-	point.textContent = 0;
-	stats = [
-		{ p: 0, pt: 0, t: 0, d: rand ? 'up' : 'dn' },
-		{ p: 1, pt: 0, t: 0, d: rand ? 'dn' : 'up' }
-	];
-
-	document.querySelector('.lead').style.top = '50%';
-}
+	break
 
 function initGame() {
 	break
