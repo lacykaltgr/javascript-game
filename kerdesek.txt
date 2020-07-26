@@ -1,0 +1,12 @@
+class Quest {
+    constructor(type, content, penalty, special=None){
+        this.type = type
+        this.content = content
+        this.penalty = penalty
+        this.special = special
+    }
+}
+
+- személyes/csapatos szivató lapok
+- trivia kérdések
+- kategorias kerdesek
