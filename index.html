@@ -17,10 +17,11 @@
 	<meta property='og:url' content='url'>
 
 	<link rel='stylesheet' type='text/css' href='index.css'>
-	
+	<link rel='stylesheet' type='text/css' href="style/addplayer.css">
+
 	<script src='data.js' defer></script>
 	<script src='index.js' defer></script>
-
+	<script src="add.js" defer></script>
 </head>
 <body>
 	<div class='warn-ES6'>Lécci, szerezz be<a href='http://outdatedbrowser.com/' target='_blank' rel='noopener'>egy tiszteséges böngészőt</a>, hogy játszhass </div>
@@ -40,10 +41,18 @@
 		</button>
 	</div>
 	<div class='page players'>
+		<span id="error"></span>
 		<h2>Játékosok beállítása</h2>
-		<label class='player-name'><input type="password" name='player-name'>ide írd a neved</label>
-		<div><button class='add-player'>+</button></div>
-		<button class='proceed-btn'>Proceed</button>
+		<!-- <div><button class='add-player'>+</button></div> -->
+		<form>
+			<input class="name-input" type="text">
+			<button class="name-button" type="submit">Add</button>
+		</form>
+		<h2>Játékosok</h2>
+		<div class=name-container>
+			<ul class="name-list"></ul>
+		</div>
+		<button class='proceed-btn'>Tovább</button>
 	</div>
 	<div class='page tutorial'>
 		<h1>ezen az oldalon a szabályok fognak megjelenni</h1>

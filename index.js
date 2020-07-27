@@ -40,6 +40,7 @@ document.onreadystatechange = function () {
 				changePage(home.classList.contains('activated') ? '.home' : '.game', '.players', 'left');
 				break;
 			case "proceed-btn":
+				console.log("hu");
 				changePage(".players", ".setup", "left");
 				break;
 			case 'tutorial-btn':
@@ -202,9 +203,15 @@ class Quest {
         this.special = special
     }
 }
-
-
-
+//add.js használja
+class Player{
+    constructor(id,name,stand) {
+        this.id = id;
+        this.name = name;
+        this.stand = stand;
+        this.cup = 100;
+    }
+}
 
 
 

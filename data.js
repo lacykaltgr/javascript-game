@@ -23,3 +23,4 @@ const tutorials = [
 	{ s: '10', t: "If it doesn't match your team,\npress the \u2A09 button." },
 	{ s: '11', t: 'Win by gaining the specified\npoint lead on your opponent.' }
 ];
+
