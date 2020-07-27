@@ -3,8 +3,12 @@ ul {
     font-size: large;
     margin: 1rem;
 }
-
-
+.fas .fa-trash-alt {
+    pointer-events: none;
+}
+.trash-btn {
+    cursor: pointer;
+}
 .name button {
     color: black;
 }

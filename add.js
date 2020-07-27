@@ -24,7 +24,7 @@ function addName(event) {
   nameDiv.appendChild(newName);
 
   const trashButton = document.createElement('button');
-  trashButton.innerText = 'Remove';
+  trashButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
   trashButton.classList.add('trash-btn');
   nameDiv.appendChild(trashButton);
   if (name !== "") {
@@ -84,7 +84,7 @@ function getNames() {
     nameDiv.appendChild(newName);
 
     const trashButton = document.createElement('button');
-    trashButton.innerText = 'Remove';
+    trashButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
     trashButton.classList.add('trash-btn');
     nameDiv.appendChild(trashButton);
 
