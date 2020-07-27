@@ -3,7 +3,7 @@ ul {
     font-size: large;
     margin: 1rem;
 }
-.fas .fa-trash-alt {
+.fa-trash-alt {
     pointer-events: none;
 }
 .trash-btn {
