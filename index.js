@@ -1,6 +1,5 @@
 var ptDelta = (n => n === '\u221E' ? null : parseInt(n))(localStorage.ptDelta || 10);
 var difficulty = parseInt(localStorage.difficulty || 1);
-var currPlayer = 0;
 var buzzerLock = false;
 var canWarnTouch = true;
 var installPrompt;
@@ -12,24 +11,10 @@ document.onreadystatechange = function () {
 	document.querySelector('.incr-points[value="-1"]').disabled = ptDelta === 5 ? true : false;
 	document.querySelector('.incr-points[value="1"]').disabled = !ptDelta ? true : false;
 	document.querySelector('[name="difficulty"][value="' + difficulty + '"]').checked = true;
-//ha érintéssel indítasz nem figyelmeztet
-	home.addEventListener('touchstart', () => {
-		home.removeEventListener('touchstart', arguments.callee);
-		home.removeEventListener('mousemove', warnTouch);
-		home.classList.remove('warn-touch');
-		canWarnTouch = false;
-		document.querySelector('.warn').textContent = 'PORTRAIT ORIENTATION RECOMMENDED';
-		warnPortrait();
-	}, { passive: true });
-//ha egérrel kezdesz figyelmeztet
-	home.addEventListener('mousemove', warnTouch);
-//buzz ha érintesz
-	document.querySelector('.buzzer').addEventListener('touchstart', e => {
-		buzz(e);
-	});
-//érintésre rezeg -- a piros gombra vonatkozott
-	document.querySelector('.buzzer').addEventListener('click', e => {
-		buzz(e);
+
+//érintésre rezeg
+//	document.querySelector('.xxxxxx').addEventListener('click', e => {
+//		buzz(e);
 	});
 //érintésre honlapot vált
 	document.addEventListener('click', e => {
@@ -166,19 +151,6 @@ document.onreadystatechange = function () {
 			requestFullscreen.call(docEl);
 		else
 			exitFullscreen.call(document);
-	}
-//egérmozgatásra figyelmeztet
-	function warnTouch() {
-		home.removeEventListener('mousemove', warnTouch);
-		home.classList.add('warn-touch');
-	}
-//figyelmeztet ha nem portremodba vagy
-	function warnPortrait() {
-		if (canWarnTouch) return;
-		if (window.innerWidth > window.innerHeight)
-			home.classList.add('warn-portrait');
-		else
-			home.classList.remove('warn-portrait');
 	}
 //rezeg?
 	function buzz(e) {
