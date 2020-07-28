@@ -58,7 +58,6 @@ document.addEventListener('click', e => {
 				changePage('.game', '.home', 'right');
 				break;
 			case 'settings-btn':
-				break;
 			case 'close-btn':
 				game.classList.toggle('settings');
 				break;
