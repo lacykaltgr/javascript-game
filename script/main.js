@@ -22,3 +22,12 @@ document.addEventListener('animationend', e => {
 		else if (e.target.classList.contains('activated'))
 			e.target.classList.remove('fly-in-left', 'fly-in-right');
 	});
+function toggleFullscreen() {
+	const docEl = document.documentElement;
+	const requestFullscreen = docEl.requestFullscreen || docEl.webkitRequestFullScreen;
+	const exitFullscreen = document.exitFullscreen || document.webkitExitFullscreen;
+	if (!document.fullscreenElement && !document.webkitFullscreenElement)
+		requestFullscreen.call(docEl);
+	else
+		exitFullscreen.call(document);
+	}
