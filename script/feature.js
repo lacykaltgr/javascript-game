@@ -1,6 +1,6 @@
 // Service worker caches page for offline use
-	if (navigator.serviceWorker)
-		navigator.serviceWorker.register('/sw.js');
+if (navigator.serviceWorker)
+		navigator.serviceWorker.register('other/sw.js');
 
 //még nem biztos mire is jó ez
 fullscreen: if (!window.matchMedia('(display-mode: fullscreen)').matches && !navigator.standalone) {
