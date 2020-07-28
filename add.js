@@ -1,3 +1,12 @@
+class Player{
+    constructor(id,name,stand) {
+        this.id = id;
+        this.name = name;
+        this.stand = stand;
+        this.cup = 100;
+    }
+}
+
 //Selectors
 const nameInput = document.querySelector('.name-input');
 const nameButton = document.querySelector('.name-button');
