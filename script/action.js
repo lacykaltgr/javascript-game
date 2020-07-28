@@ -1,13 +1,11 @@
 document.addEventListener('click', e => {
 		if (!/BUTTON|LABEL/.test(e.target.tagName)) return;
 		switch (e.target.classList.item(0)) {
+				
+//home page
 			case 'play-btn':
 				game.classList.remove('tutorial', 'mark-up', 'mark-dn');
 				changePage(home.classList.contains('activated') ? '.home' : '.game', '.players', 'left');
-				break;
-			case "proceed-btn":
-				console.log("hu");
-				changePage(".players", ".setup", "left");
 				break;
 			case 'tutorial-btn':
 				changePage('.home', '.tutorial', 'left');
@@ -15,13 +13,26 @@ document.addEventListener('click', e => {
 			case 'about-btn':
 				changePage('.home', '.about', 'left');
 				break;
-			case 'fullscreen-btn':
-				toggleFullscreen();
-				break;
+//tutorial page
+				
+//about page
 			case 'install-btn':
 				installPrompt.prompt();
 				break;
-//pia mennyiségének beállítása
+				
+				case 'share-btn':
+				navigator.share({
+					title: 'Stoner',
+					text: 'bazdmeg',
+					url: 'lacyka.github.io'
+				}).catch();
+				break;
+//players page		
+			case "proceed-btn":
+				console.log("hu");
+				changePage(".players", ".setup", "left");
+				break;
+//setup page
 			case 'incr-points':
 				const pd = [1,2,3,4,5,6,7,8,9,10, null];
 				ptDelta = pd[pd.indexOf(ptDelta) + parseInt(e.target.value)];
@@ -30,20 +41,16 @@ document.addEventListener('click', e => {
 				document.querySelector('.incr-points[value="1"]').disabled = ptDelta === 10 ? true : false;
 				localStorage.ptDelta = ptDelta || '\u221E';
 				break;
+				
 			case 'difficulty':
 				difficulty = parseInt(e.target.children[0].value);
 				localStorage.difficulty = difficulty;
 				break;
+			
 			case 'start-btn':
 				changePage('.setup', '.game', 'left');
 				break;
-			case 'share-btn':
-				navigator.share({
-					title: 'Stoner',
-					text: 'bazdmeg',
-					url: 'lacyka.github.io'
-				}).catch();
-				break;
+//game page
 			case 'prev-btn':
 				break;
 			case 'next-btn':
@@ -61,6 +68,17 @@ document.addEventListener('click', e => {
 			case 'close-btn':
 				game.classList.toggle('settings');
 				break;
+
+				
+//shop page
+				
+//global			
+			case 'fullscreen-btn':
+				toggleFullscreen();
+				break;
+			
+			
+			
 			case 'back-btn':
 				switch (document.querySelector('.activated').classList.item(1)) {
 					case 'setup':
