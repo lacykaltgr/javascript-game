@@ -185,7 +185,7 @@ button:disabled > svg {
 }
 
 .home > .fullscreen-btn {
-	display: none;
+	display: initial;
 	position: absolute;
 	margin: 0;
 	padding: .8rem;
