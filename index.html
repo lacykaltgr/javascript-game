@@ -55,7 +55,7 @@
               </select>
         </div>
         <button onclick="goTo('dificulty-screen','init-screen','right')">Vissza</button>
-        <button onclick="goTo('dificulty-screen','showplayer-screen','left')">Tovább</button>
+        <button onclick="goTo('dificulty-screen','showplayer-screen','left');start()">Tovább</button>
     </div>
     
     <!-- Settings screen -->
@@ -85,7 +85,7 @@
     <!-- Game screen -->
     <div id="game-screen" class="page">
         <div id="cardHolder"></div>        
-        <button id="next" onclick="nextCard">következő</button>
+        <button id="next" onclick="nextCard()">következő</button>
     </div>
 <button onclick="toggleFullscreen(this)"><i class="fas fa-expand"></i></button>
 </body>
