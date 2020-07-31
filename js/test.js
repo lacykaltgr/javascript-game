@@ -32,8 +32,11 @@ function Choices() {
     choice.addEventListener('click', (event)=>{
         if (event.target.classList == "card aw") {
             event.target.classList.remove("aw");
+            
             event.target.innerHTML += `<p>${players[i].name}</p>`
             div.appendChild(event.target)
+            
+            
             next(event.target)
         }
     });
