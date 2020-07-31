@@ -1,5 +1,6 @@
 // let stands = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 let data;
+let hasNextRound;
 
 startBtn = document.querySelector("#start");
 div = document.querySelector("#stands");
@@ -11,14 +12,15 @@ async function start(){
     // });
     data = JSON.parse( await loadJSON("data.json"));
     //Ki a stoner, az id 1 pl
-    players.getRandom().stand = 1;
+    players.getRandom().stand = 0;
     for (player of players) {
-        if (!player.stand) {
+        if (player.stand !== 0) {
             player.stand =  data.stands.getRandom().id;
         }
         showStand(player);
     }
     startBtn.style.display = "none";
+    hasNextRound = true;
 }
 
 
@@ -32,7 +34,7 @@ function showStand(player) {
     standDiv.appendChild(playerName);
 
     const standName = document.createElement('h2');
-    standName.innerText = player.stand;
+    standName.innerText = data.stands[player.stand].name;
     standName.classList.add('stand-name');
     standDiv.appendChild(standName);
 
