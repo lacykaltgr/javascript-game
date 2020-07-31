@@ -1,4 +1,5 @@
 // let chars = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+charIDarray = ["0000", "0001", "0002", "0003", "0004"]
 let data;
 let hasNextRound;
 
@@ -15,8 +16,9 @@ async function start(){
     //Ki a stoner, az id 1 pl
     players.getRandom().charID = 0;
     for (player of players) {
-        if (player.stand !== 0) {
-            player.stand =  data.chars.getRandom().id;
+        i = 0;
+        player.charID = _.shuffle(charIDarray)[i];
+        i++;
         }
         showCharacter(player);
     }
