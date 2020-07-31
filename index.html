@@ -1,145 +1,87 @@
 <!DOCTYPE html>
-<html lang='hu'>
+<html lang="hu">
 <head>
-	<meta charset='UTF-8'>
-	<title>Hello</title>
-	<meta name='viewport' content='height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no'>
-	<meta name='description' content='valami leírás'>
-
-	<meta name='apple-mobile-web-app-capable' content='yes'>
-	<meta name='apple-mobile-web-app-status-bar-style' content='black'>
-
-	<meta property='og:title' content='Cím'>
-	<meta property='og:description' content='valami leírás'>
-
-	<meta property='og:type' content='website'>
-	<meta property='og:url' content='url'>
-	<link rel='manifest' href='other/manifest.json'>
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-	<link rel='stylesheet' type='text/css' href='style/index.css'>
-	<link rel='stylesheet' type='text/css' href="style/addplayer.css">
-
-	<script src='script/main.js' defer></script>
-	<script src='script/feature.js' defer></script>
-	<script src='script/action.js' defer></script>
-	<script src="script/addplayer.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="style/fun.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/cards.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/addplayer.js" defer></script>
+    <script src="js/setdificulty.js" defer></script>
+    <script src="js/game.js" defer></script>
 </head>
 <body>
-	<div class='warn-ES6'>Lécci, szerezz be<a href='http://outdatedbrowser.com/' target='_blank' rel='noopener'>egy tiszteséges böngészőt</a>, hogy játszhass </div>
-	<noscript>Engedélyezd a javascriptet a használathoz</noscript>
-	
-	<div class='page home activated'>
-		<h1>Stoner?</h1>
-		<h4>na mivan *******</h4>
-		<button class='play-btn'>Jatek</button>
-		<button class='tutorial-btn'>Tutorial</button>
-		<button class='about-btn'>??</button>
-		<button class='fullscreen-btn'>
-			<svg viewBox='0 0 6 6'>
-				<path d='M2,1 h-1 v1 m0,2 v1 h1 m2,0 h1 v-1 m0,-2 v-1 h-1'/>
-			</svg>
-		</button>
-	</div>
-	<div class='page players'>
-		<span id="error"></span>
-		<h2>Játékosok beállítása</h2>
-		<!-- <div><button class='add-player'>+</button></div> -->
-		<form>
-			<input class="name-input" type="text">
-			<button class="name-button" type="submit"><i class="fas fa-plus-circle"></i></button>
-		</form>
-		<h2>Játékosok</h2>
-		<div class=name-container>
-			<ul class="name-list"></ul>
-		</div>
-		<button class='proceed-btn'>Tovább</button>
-	</div>
-	<div class='page tutorial'>
-		<h1>a szabaly hogy nincsenek szabalyok?</h1>
-	
-	</div>
-	<div class='page setup'>
-		<h2>Szetting</h2>
-		<button class='incr-points' value='-1'>&minus; </button>
-		<span class='num-points'></span>
-		<button class='incr-points' value='1'>+</button>
-		<h2>Adagolás</h2>
-		<div>
-			<label class='difficulty'><input type='radio' name='difficulty' value='0'>Lájtos</label>
-			<label class='difficulty'><input type='radio' name='difficulty' value='1'>Középszer</label>
-			<label class='difficulty'><input type='radio' name='difficulty' value='2'>Kemény</label>
-		</div>
-		<button class='start-btn'>Kezdjük</button>
-	</div>
-	<div class='page about'>
-		<h2>Adat</h2>
-		<p class='install-text'>csíkok nélküli játékhoz tölts <br><span class='manual'>le
-			<span class='android'>&#8942;</span>
-			<svg class='ios' viewBox='0 0 24 24'>
-				<path d='M14,11 h2 a2,2 0 0 1 2,2 v8 a 2,2 0 0 1 -2,2 h-10 a2,2 0 0 1 -2,-2 v-8 a2,2 0 0 1 2,-2 h2 M11,16 v-11 m-3,3 l3,-3 l3,3'/>
-			</svg>
-			majd adj  hozzá a kezdőképernyődhöz
-		</span></p>
-		<button class='install-btn'>itt</button>
-	</div>
-	<div class='page game'>
-		<h1>random kkártyák??</h1>
-		<div class='buzzer'></div>
-		<div class='quest'></div>
-		<div class='shop'></div>
-		<button class='next-btn'>
-			<svg viewBox='0 0 6 6'>
-				<path d='M2.4,1 l2,2 l-2,2'/>
-			</svg>
-		</button>
-		<button class='play-btn'>Play</button>
-		<button class='menu-btn'>
-			<svg viewBox='0 0 7 6'>
-				<path d='M1,1 h5 M1,3 h5 M1,5 h5'/>
-			</svg>
-		</button>
-		<button class='restart-btn'>
-			<svg viewBox='0 0 6 6'>
-				<path d='M4.94,3.5 A2,2 0 1 1 4.41,1.58 m.1,-.1 v.2 h-.2 Z'/>
-			</svg>
-		</button>
-		<button class='home-btn'>
-			<svg viewBox='0 0 6 6'>
-				<path d='M1,2.8 h.5 v2 h3 v-2 h.5 l-.7,-.7 v-.6 h-.6 l-.7,-.7 Z'/>
-			</svg>
-		</button>
-		<button class='settings-btn'>
-			<svg viewBox='-3 -3 6 6'>
-				<defs>
-					<path id='t' d='M-.3,-1.5 l.1,-.6 h.4 l.1,.6 M-.3,1.5 l.1,.6 h.4 l.1,-.6'/>
-				</defs>
-				<circle r='1.5'/>
-				<use xlink:href='#t'/>
-				<use xlink:href='#t' transform='rotate(60)'/>
-				<use xlink:href='#t' transform='rotate(120)'/>
-			</svg>
-		</button>
-		<div class='settings'>
-			<button class='fullscreen-btn'>Fullscreen</button>
-			<button class='close-btn'>
-				<svg viewBox='-3 -3 6 6'>
-					<path d='M-2,0 h4 M0,-2 v4' transform='rotate(45)'/>
-				</svg>
-			</button>
-		</div>
-	</div>
-	<button class='back-btn'>
-		<svg viewBox='0 0 6 6'>
-			<path d='M3,1 l-2,2 l2,2 M1,3 h4'/>
-		</svg>
-	</button>
-	<script>
-		try {
-			eval('"use strict"; let test = () => 0');
-		} catch (e) {
-			document.getElementById('warn-ES6').style.display = 'block';
-		}
-	</script>
+    <noscript>Javascript (ES6+) szükséges!</noscript>
+    <span id="error"></span>
+
+    <!-- Home screen -->
+    <div id="home-screen"  class="page activated">
+        <div class="home-menu">
+            <h1 class="title">Stoner</h1>
+            
+            <button onclick="goTo('home-screen','init-screen','left')">Start</button>
+            <button onclick="goTo('home-screen','tutorial-screen','left')">Tutorial</button>
+            <button onclick="goTo('home-screen','about-screen','left')">About</button>
+        </div>
+    </div>
+
+
+    <!-- Game init screen -->
+    <div id="init-screen"  class="page">
+        <div class="add-player">
+            <form>
+                <input class="name-input" type="text">
+                <button class="name-button" type="submit">Add</button>
+            </form>
+            <h3>Játékosok</h3>
+            <div class=name-container>
+                <ul class="name-list"></ul>
+            </div>
+        </div>
+        <button onclick="goTo('init-screen','home-screen','right')">Vissza</button>
+        <button onclick="goTo('init-screen','dificulty-screen','left')">Tovább</button>
+    </div>
+    <div id="dificulty-screen" class="page">
+        <div>
+            <h1>Nehézség</h1>
+            <select id="dificulty" size="4" onchange="setDificulty(this)">
+                <option value="0">Könnyű</option>
+                <option value="1">Közepes</option>
+                <option value="2">Nehéz</option>
+                <option value="3">Hardcore</option>
+              </select>
+        </div>
+        <button onclick="goTo('dificulty-screen','init-screen','right')">Vissza</button>
+        <button onclick="goTo('dificulty-screen','game-screen','left')">Tovább</button>
+    </div>
+    
+    <!-- Settings screen -->
+    <div class="page">
+
+    </div>
+
+    <!-- Tutorial screen -->
+    <div id="tutorial-screen" class="page">
+        <h1>Tutorial</h1>
+        <button onclick="goTo('tutorial-screen','home-screen','right')">Vissza</button>
+    </div>   
+
+    <!-- About screen -->
+    <div id="about-screen" class="page">
+        <h1>About</h1>
+        <button onclick="goTo('about-screen','home-screen','right')">Vissza</button>
+    </div>     
+
+    <!-- Game screen -->
+    <div id="game-screen" class="page">
+        <div id="stands">
+        </div>
+        <button id="start" onclick="start()">start</button>
+    </div>
+<button onclick="toggleFullscreen(this)"><i class="fas fa-expand"></i></button>
 </body>
 </html>

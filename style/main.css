@@ -1,0 +1,85 @@
+.fly-out-left {
+	animation: fly-left .5s;
+}
+
+.fly-in-left {
+	animation: fly-right .5s reverse;
+}
+
+.fly-out-right {
+	animation: fly-right .5s;
+}
+
+.fly-in-right {
+	animation: fly-left .5s reverse;
+}
+
+@keyframes fly-left {
+	to {
+		left: -100%;
+	}
+}
+
+@keyframes fly-right {
+	to {
+		left: 200%;
+	}
+}
+
+.page {
+	position: fixed;
+	margin-right: -50%;
+	top: 50%;
+	left: 0;
+	width: 100%;
+    transform: translateY(-50%);
+}
+
+.fullscreen-btn {
+    background-color: gray;
+    color: white;
+}
+
+button {
+	font-size: 2rem;
+	color: gray;
+    padding: .5rem;
+    margin: .5rem;
+	border: .2rem solid black;
+	cursor: pointer;
+}
+
+button:hover {
+    color: white;
+    background-color: teal;
+}
+
+.home-menu, .add-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.home-menu > button {
+    max-width: 200px;
+    width: 30vw;
+}
+.name {
+    font-size: 1rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.name-list {
+    margin: 0;
+    padding: 0;
+}
+.name-container {
+    overflow-x: visible;
+    overflow-y: auto;
+    max-height: 40vh;
+}
+.trash-btn {
+    font-size: 1rem;
+}
