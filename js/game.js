@@ -34,15 +34,15 @@ async function start(){
 }
 
 function showCharacter(player) {
-    const charDiv = document.createElement('div');
+    const charDiv = document.getElementById('game-screen');
     charDiv.classList.add('character');
 
-    const playerName = document.createElement('h1');
+    const playerName = document.createElement('h2');
     playerName.innerText = player.name;
     playerName.classList.add('player-name');
     charDiv.appendChild(playerName);
 
-    const charName = document.createElement('h2');
+    const charName = document.createElement('h3');
     charName.innerText = data.chars[player.stand].name;
     charName.classList.add('character-name');
     charDiv.appendChild(charName);
@@ -55,7 +55,13 @@ Array.prototype.getRandom = function(){
     return this[Math.floor(Math.random()*this.length)];
 }
 
-
+var round = 0
+var array = _.shuffle(["a", "b", "c", "d"]);
+function nextCard() {
+    const cardHolder = document.getElementById("cardHolder");
+    cardHolder.innerText = array[round] // lehet inkább törléssel kéne de így jónak tűnik jelenleg
+    round++ 
+}
 // //karakterek sorsolása most számok lesznek (id)
 // var players = JSON.parse(localStorage.getItem('players'));
 // const chars = [1,2,3,4,5,6,7,8]
