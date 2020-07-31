@@ -60,6 +60,15 @@ nameList.addEventListener('click', (event) => {
   }
 });
 
+function test() {
+  if (3 < players.length && players.length < 17){
+    goTo('init-screen','dificulty-screen','left');
+  } else if (players.length < 4) {
+    alertError(`Minimum négy játékos szükséges az indításhoz!`);
+  } else {
+    alertError("Maximum tizenhat játékos tud résztvenni egyszerre!");
+  }
+}
 
 function createHTML(name) {
   const nameDiv = document.createElement('div');
