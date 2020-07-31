@@ -1,5 +1,5 @@
 // let chars = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-charIDarray = ["0000", "0001", "0002", "0003", "0004"]
+var charIDarray = ["0000", "0001", "0002", "0003", "0004"]
 let data;
 let hasNextRound;
 
