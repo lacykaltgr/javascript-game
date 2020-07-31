@@ -16,7 +16,7 @@ async function start(){
     //Ki a stoner, az id 1 pl
     players.getRandom().charID = 0;
     for (player of players) {
-        i = 0;
+        var i = 0;
         player.charID = _.shuffle(charIDarray)[i];
         i++;
         }
