@@ -1,9 +1,10 @@
-// let stands = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+// let chars = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 let data;
 let hasNextRound;
 
+
 startBtn = document.querySelector("#start");
-div = document.querySelector("#stands");
+div = document.querySelector("#chars");
 
 async function start(){
     //nem jó a callback promis kell; túl macerás
@@ -12,33 +13,32 @@ async function start(){
     // });
     data = JSON.parse( await loadJSON("data.json"));
     //Ki a stoner, az id 1 pl
-    players.getRandom().stand = 0;
+    players.getRandom().charID = 0;
     for (player of players) {
         if (player.stand !== 0) {
-            player.stand =  data.stands.getRandom().id;
+            player.stand =  data.chars.getRandom().id;
         }
-        showStand(player);
+        showCharacter(player);
     }
     startBtn.style.display = "none";
     hasNextRound = true;
 }
 
-
-function showStand(player) {
-    const standDiv = document.createElement('div');
-    standDiv.classList.add('stand');
+function showCharacter(player) {
+    const charDiv = document.createElement('div');
+    charDiv.classList.add('character');
 
     const playerName = document.createElement('h1');
     playerName.innerText = player.name;
     playerName.classList.add('player-name');
-    standDiv.appendChild(playerName);
+    charDiv.appendChild(playerName);
 
-    const standName = document.createElement('h2');
-    standName.innerText = data.stands[player.stand].name;
-    standName.classList.add('stand-name');
-    standDiv.appendChild(standName);
+    const charName = document.createElement('h2');
+    charName.innerText = data.chars[player.stand].name;
+    charName.classList.add('character-name');
+    charDiv.appendChild(charName);
 
-    div.appendChild(standDiv);
+    div.appendChild(charDiv);
 }
 
 //Prototypes 
@@ -49,7 +49,7 @@ Array.prototype.getRandom = function(){
 
 // //karakterek sorsolása most számok lesznek (id)
 // var players = JSON.parse(localStorage.getItem('players'));
-// const stands = [1,2,3,4,5,6,7,8]
+// const chars = [1,2,3,4,5,6,7,8]
 
 // card = document.querySelector("#card");
 // test = document.querySelector("#test");
@@ -61,14 +61,14 @@ Array.prototype.getRandom = function(){
 //     //
 //     for (player of players) {
 //         if (!player.stand) {
-//         player.stand = stands.getRandom();
+//         player.stand = chars.getRandom();
 //         }
         
 //     }
 
 // }
 
-// function  epicCardStands(player) {
+// function  epicCardchars(player) {
     
 //     //kell promise, vagy await vagy valami
 // }
