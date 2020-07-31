@@ -15,12 +15,12 @@ async function start(){
     // });
     data = JSON.parse( await loadJSON("data.json"));
     var hero_curr;
-    var hero_num = round(players/4)+1
-    let villains = _.shuffle(charIDarrayvill)
-    let heroes = _.shuffle(charIDarrayhero)
+    var hero_num = round(players/4)++;
+    let villains = _.shuffle(charIDarrayvill);
+    let heroes = _.shuffle(charIDarrayhero);
     players.getRandom().charID = "000";
     for (hero_curr=0; hero_curr<hero_num; hero_curr++) {
-        players.getRandom().charID = heroes[hero_curr]
+        players.getRandom().charID = heroes[hero_curr];
     }
     for (player of players) {
         let i = 0;
