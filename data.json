@@ -1,0 +1,31 @@
+{
+    "stands":[
+        {
+            "id":1,
+            "name":"Stoner",
+            "power":"",
+            "power-description":""
+        },
+        {
+            "id":2,
+            "name":"Az ellenőr",
+            "power":"",
+            "power-description":""
+        },
+        {
+            "id":3,
+            "name":"Töki",
+            "power":"",
+            "power-description":""
+        },
+        {
+            "id":4,
+            "name":"Nmetom",
+            "power":"",
+            "power-description":""
+        }
+    ],
+    "events":[
+
+    ]
+}
