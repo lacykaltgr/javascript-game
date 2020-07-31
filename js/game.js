@@ -1,21 +1,44 @@
-// let chars = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+import {shuffle} from "./_.js"
+
 var charIDarrayvill = ["101", "102", "103", "104"]
 var charIDarrayhero = ["001", "002", "003"]
 let data;
 let hasNextRound;
+let eventCompleted;
+
+let startBtn = document.querySelector("#start");
+let div = document.querySelector("#chars");
+let cardDiv = document.querySelector("#card");
 
 
-startBtn = document.querySelector("#start");
-div = document.querySelector("#chars");
+function nextRound() {
+    if (hasNextRound && eventCompleted) {
+        getCard();
+    } else {
+        //új játék kezdése stb...
+
+    }
+}
+
+function getCard() {
+    cardDiv.innerText = "Ez egy új kártya";
+}
+
+function makeDeck() {
+    let deck;
+    let charIds = [];
+    players.forEach(player => {
+        charIds.push(player.charId);
+    });
+
+    return deck;
+}
+
 
 async function start(){
-    //nem jó a callback promis kell; túl macerás
-    // loadJSON('data.json',(str)=>{
-    //     data = JSON.parse(str);
-    // });
     data = JSON.parse( await loadJSON("data.json"));
-    var hero_curr;
-    var hero_num = round(players/4);
+    let hero_curr;
+    let hero_num = round(players/4);
     let villains = _.shuffle(charIDarrayvill);
     let heroes = _.shuffle(charIDarrayhero);
     players.getRandom().charID = "000";
@@ -49,6 +72,7 @@ function showCharacter(player) {
 
     div.appendChild(charDiv);
 }
+
 
 //Prototypes 
 Array.prototype.getRandom = function(){
@@ -90,7 +114,6 @@ function nextCard() {
 
 // }
 
-// /*
 // const Game = {
 //     count: [{"name":"alma","id":1}],
 //     hasNext: true ? true:false,

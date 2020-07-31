@@ -1,13 +1,11 @@
 var players;
 
-
 //Selectors
 const nameInput = document.querySelector('.name-input');
 const nameButton = document.querySelector('.name-button');
 const nameList = document.querySelector('.name-list');
 
 //Event Listeners
-
 document.addEventListener('DOMContentLoaded', (event) =>{
   if (localStorage.getItem('players') === null) {
     players = [];
