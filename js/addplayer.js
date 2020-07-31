@@ -38,6 +38,8 @@ nameButton.addEventListener('click', (event) => {
     } else {
       alertError('Ilyen nevű játékos már létezik!');
     }
+  } else {
+    alertError('Kevés karakter');
   }
   nameInput.value = "";
 });
