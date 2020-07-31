@@ -55,7 +55,7 @@
               </select>
         </div>
         <button onclick="goTo('dificulty-screen','init-screen','right')">Vissza</button>
-        <button onclick="goTo('dificulty-screen','game-screen','left')">Tovább</button>
+        <button onclick="goTo('dificulty-screen','showplayer-screen','left')">Tovább</button>
     </div>
     
     <!-- Settings screen -->
@@ -73,7 +73,14 @@
     <div id="about-screen" class="page">
         <h1>About</h1>
         <button onclick="goTo('about-screen','home-screen','right')">Vissza</button>
-    </div>     
+    </div>   
+    
+    <!-- Showplayer screen -->
+    <div id="showplayer-screen" class="page">
+        <h1>Karakterek listája</h1>
+        <button onclick="goTo('showplayer-screen','game-screen','left')">Csapassuk</button>
+    </div>
+        
 
     <!-- Game screen -->
     <div id="game-screen" class="page">
