@@ -1,5 +1,6 @@
 // let chars = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-var charIDarray = ["0000", "0001", "0002", "0003", "0004"]
+var charIDarrayvill = ["101", "102", "103", "104"]
+var charIDarrayhero = ["001", "002", "003"]
 let data;
 let hasNextRound;
 
@@ -13,11 +14,17 @@ async function start(){
     //     data = JSON.parse(str);
     // });
     data = JSON.parse( await loadJSON("data.json"));
-    //Ki a stoner, az id 1 pl
-    players.getRandom().charID = 0;
+    var hero_curr;
+    var hero_num = round(players)+1
+    let villains = _.shuffle(charIDarrayvill)
+    let heroes = _.shuffle(charIDarrayhero)
+    players.getRandom().charID = "000";
+    for (hero_curr=0; hero_curr<hero_num; hero_curr++) {
+        players.getRandom().charID = heroes[hero_curr]
+    }
     for (player of players) {
-        var i = 0;
-        player.charID = _.shuffle(charIDarray)[i];
+        let i = 0;
+        player.charID = villain[i];
         i++;
         }
         showCharacter(player);
