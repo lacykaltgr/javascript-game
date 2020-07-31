@@ -26,9 +26,9 @@ async function start(){
         let i = 0;
         player.charID = villain[i];
         i++;
-        }
-        showCharacter(player);
     }
+    showCharacter(player);
+    
     startBtn.style.display = "none";
     hasNextRound = true;
 }
