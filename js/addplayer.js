@@ -1,11 +1,13 @@
 var players;
 
+
 //Selectors
 const nameInput = document.querySelector('.name-input');
 const nameButton = document.querySelector('.name-button');
 const nameList = document.querySelector('.name-list');
 
 //Event Listeners
+
 document.addEventListener('DOMContentLoaded', (event) =>{
   if (localStorage.getItem('players') === null) {
     players = [];
@@ -36,6 +38,7 @@ nameButton.addEventListener('click', (event) => {
     } else {
       alertError('Ilyen nevű játékos már létezik!');
     }
+
   } else {
     alertError('Kevés karakter');
   }
@@ -67,6 +70,7 @@ function test() {
     alertError("Maximum tizenhat játékos tud résztvenni egyszerre!");
   }
 }
+
 
 function createHTML(name) {
   const nameDiv = document.createElement('div');
