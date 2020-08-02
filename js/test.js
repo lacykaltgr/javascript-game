@@ -7,6 +7,7 @@ let div = document.querySelector(".choosed")
 let players = JSON.parse(localStorage.getItem('players'));
 let cards = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
 
+
 let i = 0;
 cards = cards.slice(0,players.length-1);
 cards.push(1); //nem írod át, nem lehet egyben
@@ -18,6 +19,15 @@ shuffle(cards);
 // })
 Choices()
 
+let lis = document.querySelectorAll("li");
+console.log(lis)
+let j = 130/players.length
+lis.forEach((li,index)=>{
+    li.style.transform = `translate( ${1-(index)}em, ${2+(index)}em) rotate(${-50+((index+1)*j)}deg)`;
+    li.style.left = `${2.5*index}em`
+});
+
+
 name.innerText = players[i].name;
 
 
@@ -26,18 +36,20 @@ function Choices() {
         choice.innerHTML += `
         <li class="scene">
             <div class="card">
-                <div class="card__face card__face--front aw"></div>
+                <div class="card__face card__face--front"></div>
                 <div class="card__face card__face--back">${element}</div>
             </div>
         </li>`;
     });
     choice.addEventListener('click', (event)=>{
-        if (event.target.classList == "card__face card__face--front aw") {
-            event.target.parentElement.classList.add("is-flipped");
-            event.target.parentElement.addEventListener("transitionend", ()=> { //neeeeeeeeeee basz, hufgeaeugewqrq hj dsaiugfasuig afgv faiuga fhuía d
-                if (event.target.classList == "card__face card__face--front aw") { //egy nagyon szar megoldása, a transitionend event fasságára
-                    event.target.classList.remove("aw");
-                    div.appendChild(event.target.parentElement)
+        let element = event.target;
+        if (element.classList == "card__face card__face--front") {
+            element.parentElement.parentElement.style.transform = "rotate(0deg) translate(40vw, 0)"
+            element.parentElement.parentElement.style.transition = "transform 1s"
+            element.parentElement.parentElement.addEventListener("transitionend", ()=> {
+                element.parentElement.classList.add("is-flipped");
+                element.parentElement.addEventListener("transitionend", ()=> { // hufgeaeugewqrq hj dsaiugfasuig afgv faiuga fhuía d
+                    div.appendChild(element.parentElement)
                     div.innerHTML += `<span>${players[i].name}</span>`
                     i++;
                     if (players[i]) {
@@ -45,8 +57,7 @@ function Choices() {
                     } else {
                         name.innerText = ""
                     }
-                    
-                }
+                });
             });
         }
     });
