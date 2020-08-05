@@ -9,6 +9,7 @@
     
 
         .scene {
+            
             list-style-type: none;
             position: absolute;
             perspective: 600px;
@@ -16,8 +17,8 @@
          
         .card {
             
+            position: relative;
             cursor: pointer;
-            display: inline-block;
             width: 6.6em;
             height: 9.2em;
             padding: .25em;
@@ -26,7 +27,6 @@
             font-size: 1.2em; 
             font-weight: normal;
             font-family: Arial, sans-serif;
-            position: relative;
             
         }
         .card:hover {
@@ -65,28 +65,66 @@
             transform: rotateY(180deg);
         }
         .choosed > .card {
-            
             display: block;
-            
+        }
+        .choosed {
+            flex-flow: row;
+        }
+
+        .oldal {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-flow: column wrap;
+            align-items: center;
+        }
+        .info {
+            display: flex;
+            height: 30vh;
+            flex-flow: column wrap;
+            align-items: center;
+        }
+        .hand {
+            display: flex;
+            flex-flow: column;
+            align-items:center;
+            background-color: burlywood;
+            width: 100vw;
+            height: 300px;
         }
         ul {
-            display: block;
-            position: fixed;
-            top: 200px;
-            left: 30vw;
+            padding: 0;
+            display: flex;
+            flex-flow: column wrap;
+            align-items:center;
+            height: 300px;
+            width: 300px;
+            position:absolute;
+            left: calc(50%-300px);
+            background-color: cadetblue;
+          
+           
         }
-        
+        .center {
+            left: 0;
+            transform: rotate(0deg) scale(1.3) translate(20vw, -25vh);
+            transition: transform .8s cubic-bezier(0, 0, 0.24, 1.04) 0s;
+        }
     </style>
 </head>
 <body>
     <div class="oladl">
-    <h2>Választ:</h2>
-    <h1 id="name"></h1>
-    <ul id="choice"></ul>
+        <div class="info">
+            <h2>Választ:</h2>
+            <h1 id="name"></h1>
+        </div>
+        <div class="hand">
+            <ul id="choice">
+            </ul>
+        </div>
     
-    
-    <div class="choosed">
+        <div class="choosed">
+        </div>
     </div>
-</div>
 </body>
 </html>

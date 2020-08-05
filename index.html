@@ -15,7 +15,7 @@
 </head>
 <body>
     <noscript>Javascript (ES6+) szükséges!</noscript>
-    <span id="error"></span>
+    <span id="error" class=""></span>
 
     <!-- Home screen -->
     <div id="home-screen"  class="page activated">
@@ -40,14 +40,16 @@
             <div class=name-container>
                 <ul class="name-list"></ul>
             </div>
+            <div class="nav">
+            <button  onclick="goTo('init-screen','home-screen','right')">Vissza</button>
+            <button  onclick="test()">Tovább</button>
+            </div>
         </div>
-        <button onclick="goTo('init-screen','home-screen','right')">Vissza</button>
-        <button onclick="test()">Tovább</button>
 
         <a href="test.html" style="color: red; font-size: large;">Ez egy teszt</a>
     </div>
     <div id="dificulty-screen" class="page">
-        <div>
+        <div class="box">
             <h1>Nehézség</h1>
             <select id="dificulty" size="4" onchange="setDificulty(this)">
                 <option value="0">Könnyű</option>
@@ -55,9 +57,13 @@
                 <option value="2">Nehéz</option>
                 <option value="3">Hardcore</option>
               </select>
-        </div>
+              <p>Leírások</p>
+        
+        <div class="nav">
         <button onclick="goTo('dificulty-screen','init-screen','right')">Vissza</button>
         <button onclick="goTo('dificulty-screen','showplayer-screen','left');start()">Tovább</button>
+        </div>
+    </div>
     </div>
     
     <!-- Settings screen -->
@@ -91,6 +97,6 @@
         <button id="next" onclick="nextCard()">következő</button>
 
     </div>
-<button onclick="toggleFullscreen(this)"><i class="fas fa-expand"></i></button>
+<button class="fullscreen-btn" onclick="toggleFullscreen(this)"><i class="fas fa-expand"></i></button>
 </body>
 </html>

@@ -45,8 +45,8 @@ function Choices() {
         let element = event.target;
         if (element.classList == "card__face card__face--front") {
             element.parentElement.parentElement.style.left = "0";
-            element.parentElement.parentElement.style.transform = "rotate(0deg) translate(20vw, -25vh)"
-            element.parentElement.parentElement.style.transition = "transform 1s"
+            element.parentElement.parentElement.style.transform = "rotate(0deg) scale(1.3) translate(40%, -15vh)"
+            element.parentElement.parentElement.style.transition = "transform .8s cubic-bezier(0, 0, 0.24, 1.04) 0s"
             element.parentElement.parentElement.addEventListener("transitionend", ()=> {
                 element.parentElement.classList.add("is-flipped");
                 element.parentElement.addEventListener("transitionend", ()=> { // hufgeaeugewqrq hj dsaiugfasuig afgv faiuga fhuía d

@@ -26,39 +26,53 @@
 	}
 }
 
+
 .page {
+    
 	position: fixed;
 	margin-right: -50%;
 	top: 50%;
 	left: 0;
-	width: 100%;
+    width: 100vw;
+    
     transform: translateY(-50%);
 }
 
 .fullscreen-btn {
-    background-color: gray;
+    margin: 0;
+    position: absolute;
+    top: 2vh;
+}
+.fs-on {
+    background-color: #34495e;
     color: white;
 }
 
 button {
 	font-size: 2rem;
-	color: gray;
+    color: #ecf0f1;
+    background: #2ecc71;
     padding: .5rem;
     margin: .5rem;
-	border: .2rem solid black;
-	cursor: pointer;
+	border: none;
+    cursor: pointer;
+    outline: none;
 }
 
-button:hover {
+button:hover,
+button:focus {
+    
     color: white;
-    background-color: teal;
+    
+    
 }
 
-.home-menu, .add-player {
+.home-menu, .add-player, .box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    height: 100%;
+    
 }
 .home-menu > button {
     max-width: 200px;
@@ -70,6 +84,10 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    background-color: teal;
+    padding: 0 1em;
+    margin: 1em;
+    color: white;
 }
 .name-list {
     margin: 0;
@@ -79,8 +97,45 @@ button:hover {
     overflow-x: visible;
     overflow-y: auto;
     max-height: 40vh;
+    background-color: whitesmoke;
+    padding: 1em;
+    width: 250px;
+    
 }
 .trash-btn {
     font-size: 1rem;
 }
-
+.nav {
+    position: relative;
+    top: 2em;
+}
+.name-input {
+    height: 30px;
+    width: 100%;
+}
+.name-button {
+    background-color: gray;
+    color: white
+}
+.name-button:hover,
+.name-button:focus {
+    background-color: #333 ;
+}
+form {
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 30vw;
+    min-width: 300px;
+    
+}
+#error {
+    z-index: 100;
+    background-color: red;
+    color: white;
+    margin-bottom: 1em;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}

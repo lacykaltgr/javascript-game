@@ -51,10 +51,10 @@ function toggleFullscreen(element) {
     const exitFullscreen = document.exitFullscreen || document.webkitExitFullscreen;
     if (!document.fullscreenElement && !document.webkitFullscreenElement) {
         requestFullscreen.call(docEl);
-        element.classList.add("fullscreen-btn");
+        element.classList.toggle("fs-on");
     } else{
         exitFullscreen.call(document);
-        element.classList.remove("fullscreen-btn");
+        element.classList.toggle("fs-on");
     }
 }
 
