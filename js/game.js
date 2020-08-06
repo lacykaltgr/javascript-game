@@ -1,4 +1,4 @@
-import {shuffle} from "./_.js"
+import {shuffle} from "./rand.js"
 
 var charIDarrayvill = ["101", "102", "103", "104"]
 var charIDarrayhero = ["001", "002", "003"]
