@@ -55,7 +55,10 @@
             transform: rotateY( 180deg );
         }
         .card.is-flipped { 
-            transform: rotateY(180deg) translate(-14em,0) scale(1.5);
+            transform: rotateY(180deg) translateX(-14em) translateZ(0) scale(1.5) ;
+            transform-origin: 50% 50%;
+            -webkit-font-smoothing: subpixel-antialiased;
+            
         }
         .deck, .card-history {
             position: fixed;

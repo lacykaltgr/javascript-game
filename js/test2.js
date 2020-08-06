@@ -15,7 +15,7 @@ function createCardNode(text) {
     back = document.createElement("div");
     back.classList.add("card__face");
     back.classList.add("card__face--back")
-    back.innerText = Math.random();
+    back.innerText = Math.round(Math.random()*100);
 
     card.appendChild(front);
     card.appendChild(back);
@@ -25,6 +25,7 @@ function createCardNode(text) {
         deck.insertBefore(createCardNode("hi"),li);
 
         card.classList.add("is-flipped");
+        
         card.addEventListener("transitionend", (event)=>{
             CardHistory.innerHTML = "";
             card.style.zIndex = "-100"
