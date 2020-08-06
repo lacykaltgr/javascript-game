@@ -43,15 +43,15 @@
     position: absolute;
     top: 2vh;
 }
-.fs-on {
-    background-color: #34495e;
+/* .fs-on {
+    background-color: green;
     color: white;
-}
+} */
 
 .btn {
 	font-size: 2rem;
     color: #ecf0f1;
-    background: #333333;
+    background-color: rgba(51, 51, 51,0.5);;
     padding: .5rem;
     margin: .5rem;
 	border: none;
@@ -62,7 +62,7 @@
 
 .btn:hover,
 .btn:focus {
-    
+    background-color: rgba(51, 51, 51,0.9);;
     color: white;
     
     
@@ -75,9 +75,9 @@
     height: 100%;
     
 }
-.home-menu > button {
-    max-width: 200px;
-    width: 30vw;
+.home-menu > .btn {
+    width: 200px;
+    padding: 0.5rem 1rem;
 }
 .name {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -108,14 +108,13 @@
 .trash-btn {
     
     font-size: 1rem;
-    background-color: #1a1a1a;
+    background-color: rgba(26, 26, 26,0.5);
     font-size: 1em;
     height: 1.5em;
     
 }
 .trash-btn:hover {
-    background-color: #d9d9d9;
-    color: #1a1a1a;
+    background-color: rgba(26, 26, 26,0.9);
 }
 .nav {
     position: relative;
@@ -128,7 +127,7 @@
     width: 100%;
 }
 .name-button {
-    background-color: gray;
+    background-color: rgba(51, 51, 51,0.6);
     color: white
 }
 .name-button:hover,
@@ -145,6 +144,7 @@ form {
     
 }
 #error {
+    
     z-index: 100;
     background-color: red;
     color: white;
@@ -161,12 +161,12 @@ button {
     outline: none;
 }
 .previous {
-    background-color: #f1f1f1;
+    background-color:rgba(241, 241, 241,0.8);
     color: black;
   }
   
   .next {
-    background-color: gray;
+    background-color: rgba(51, 51, 51,0.6);
     color: white;
   }
   
@@ -180,7 +180,7 @@ button {
 
   .round:hover,
   .round:focus{
-    background-color: #ddd;
+    background-color: rgba(241, 241, 241,0.8);
     color: black;
   }
 
@@ -194,7 +194,7 @@ body {
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
 .title {
-    font-size: 4em;
+    font-size: 6em;
 
 }
   
