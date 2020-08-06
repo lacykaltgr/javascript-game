@@ -80,7 +80,8 @@ function createHTML(name) {
   newName.classList.add('name-item');
   nameDiv.appendChild(newName);
   const trashButton = document.createElement('button');
-  trashButton.innerText = 'Remove';
+  trashButton.classList.add("btn")
+  trashButton.innerText = '-';
   trashButton.classList.add('trash-btn');
   nameDiv.appendChild(trashButton);
   nameList.appendChild(nameDiv);  

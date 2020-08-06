@@ -48,19 +48,20 @@
     color: white;
 }
 
-button {
+.btn {
 	font-size: 2rem;
     color: #ecf0f1;
-    background: #2ecc71;
+    background: #333333;
     padding: .5rem;
     margin: .5rem;
 	border: none;
     cursor: pointer;
     outline: none;
+    border-radius: 0.1em;
 }
 
-button:hover,
-button:focus {
+.btn:hover,
+.btn:focus {
     
     color: white;
     
@@ -79,37 +80,50 @@ button:focus {
     width: 30vw;
 }
 .name {
-    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    background-color: teal;
+    background-color:rgba(52,73,94,0.5);
     padding: 0 1em;
     margin: 1em;
     color: white;
 }
 .name-list {
+    
     margin: 0;
     padding: 0;
 }
 .name-container {
+    background-color: rgba(52,73,94,0.2);
     overflow-x: visible;
     overflow-y: auto;
     max-height: 40vh;
-    background-color: whitesmoke;
     padding: 1em;
     width: 250px;
     
 }
 .trash-btn {
+    
     font-size: 1rem;
+    background-color: #1a1a1a;
+    font-size: 1em;
+    height: 1.5em;
+    
+}
+.trash-btn:hover {
+    background-color: #d9d9d9;
+    color: #1a1a1a;
 }
 .nav {
     position: relative;
     top: 2em;
 }
 .name-input {
+    border: none;
+    border-radius: 0.3em;
     height: 30px;
     width: 100%;
 }
@@ -139,3 +153,73 @@ form {
     width: 100%;
     text-align: center;
 }
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  .next {
+    background-color: gray;
+    color: white;
+  }
+  
+  .round {
+    text-align: center;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+
+  }
+
+  .round:hover,
+  .round:focus{
+    background-color: #ddd;
+    color: black;
+  }
+
+  html {
+    height: 100%;
+}
+body {
+    height: 100%;
+      background-image: linear-gradient(#ff5f6d , #ffc371);
+      color: #fff;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+.title {
+    font-size: 4em;
+
+}
+  
+  /* width
+  ::-webkit-scrollbar {
+    width: 2em;
+    
+  }
+  
+  /* Track */
+  /* ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;  */
+    /* border-radius: 2em; */
+  /* }
+   
+  ::-webkit-scrollbar-thumb {
+    background: url(../media/back.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #34495e; */
+    /* border-radius: 2em; */
+  /* } */
+  
+  /* Handle on hover */
+  /* ::-webkit-scrollbar-thumb:hover {
+    /* background: #333;  */
+  /* }  */
