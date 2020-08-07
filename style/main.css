@@ -223,3 +223,30 @@ body {
   /* ::-webkit-scrollbar-thumb:hover {
     /* background: #333;  */
   /* }  */
+
+  #dificulty::-webkit-scrollbar {
+      display: none;
+  }
+  #dificulty{
+    width: 30vw;
+    max-width: 250px;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(51, 51, 51,0.3);
+    outline: none;
+    font-size: 1em;
+    font-family: inherit;
+    border: none;
+    border-radius: 0.2em;
+    
+  }
+  #dificulty > option {
+      text-align: center;
+      padding: 0;
+      height: calc(100%/4);
+      
+  }
+
+
+  

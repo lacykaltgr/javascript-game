@@ -8,8 +8,7 @@
 }
 .card {
   
-  transform: rotate(40deg);
-  position: relative;
+  position: absolute;
   cursor: pointer;
   width: 6.6em;
   height: 9.2em;
@@ -62,20 +61,30 @@ backface-visibility: hidden;
   transform: translate(100px, 100px) scale(1.3) rotateY(180deg) ;
   }
 }
+#picked > .card {
+    pointer-events: none;
+    position: relative;
+    left: 300px;
+}
 </style>
 <script src="js/test3.js" defer></script>
 </head>
 <body>
 
-
-<div class="scene">
-  <div class="card">
+<ul class="hand scene">
+  <li class="card">
     <div class="inner front">Front</div>
     <div class="inner back">Back</div>
-  </div>
-</div>
- 
+  </li>
+  <li class="card">
+    <div class="inner front">Front</div>
+    <div class="inner back">Back</div>
+  </li>
+</ul>
 
+<ul id="picked">
+
+</ul>
 </body>
 </html>
 
