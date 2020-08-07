@@ -48,7 +48,8 @@ nameButton.addEventListener('click', (event) => {
 
 nameList.addEventListener('click', (event) => {
   const item = event.target;
-  if (item.classList[0] === 'trash-btn') {
+  
+  if (item.classList.contains("trash-btn")) {
     const name = item.parentElement;
     const nameText = name.children[0].innerText;
     players.forEach((player, index) => {
@@ -84,7 +85,7 @@ function createHTML(name) {
   trashButton.innerText = '-';
   trashButton.classList.add('trash-btn');
   nameDiv.appendChild(trashButton);
-  nameList.appendChild(nameDiv);  
+  nameList.insertBefore(nameDiv,nameList.firstChild);  
 }
 
 //Prototypes 
