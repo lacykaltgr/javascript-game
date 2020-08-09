@@ -43,37 +43,37 @@
             "power-description":""
         },
         {
-            "id": "103
+            "id": "103",
             "name":"Zoomer",
             "power":"",
             "power-description":""
         },
          {
-            "id": "104"
-            "name":"BKV-ellenőr"
+            "id": "104",
+            "name":"BKV-ellenőr",
             "power":"",
             "power-description":""
         },
          {
             "id": "105",
-            "name":"Sportoló"
+            "name":"Sportoló",
             "power":"",
             "power-description":""
         },
          {
-            "id": "106,
-            "name":"Náci"
+            "id": "106",
+            "name":"Náci",
             "power":"",
             "power-description":""
         },
          {
-            "id": "107,
-            "name":"Menő
+            "id": "107",
+            "name":"Menő",
             "power":"",
             "power-description":""
         },
          {
-            "id": "108,
+            "id": "108",
             "name":"",
             "power":"",
             "power-description":""
