@@ -4,13 +4,12 @@ function pickCard() {
     let hand = document.querySelector(".hand"); 
     let pick = document.querySelector("#pick");
     let pickedCards = document.querySelector(".picked-cards");
-    let i = 0;
-    pick.innerText = players[i].name;
+    let i = 1;
+    pick.innerText = players[0].name;
     players.forEach((player)=>{
         let card = cardHtml();
         hand.appendChild(card);
         card.addEventListener("click", (event)=>{
-            console.log("kkkk")
             pick.innerText = players[i].name;
             pickedCards.appendChild(card);
             i++;
