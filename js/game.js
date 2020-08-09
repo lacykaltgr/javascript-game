@@ -14,8 +14,6 @@ function pickCard() {
             pickedCards.appendChild(card);
             i++;
         });
-    
-
     });    
 }
 function cardHtml(){
