@@ -201,9 +201,7 @@ body {
       overflow-x: hidden;
       background-repeat:no-repeat;
         background-attachment: fixed;
-      background-image: linear-gradient(
-        #ffd89b,
-        #19547b);
+      background-image: linear-gradient(#ffd89b,#19547b);
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
 .title {

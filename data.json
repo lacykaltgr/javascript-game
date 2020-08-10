@@ -1,31 +1,84 @@
 {
     "chars":[
         {
-            "id":0,
+            "id": "000",
+            "name":"Renegát",
+            "power":"",
+            "power-description":""
+        },
+        {
+            "id":"001",
             "name":"Stoner",
             "power":"",
             "power-description":""
         },
         {
-            "id":1,
-            "name":"Az ellenőr",
+            "id": "002",
+            "name":"Heroin-függő",
             "power":"",
             "power-description":""
         },
         {
-            "id":2,
-            "name":"Töki",
+            "id": "003",
+            "name":"Crackfej",
             "power":"",
             "power-description":""
         },
         {
-            "id":3,
-            "name":"Nmetom",
+            "id": "004",
+            "name":"Step-sister",
+            "power":"",
+            "power-description":""
+        },
+        {
+            "id": "101",
+            "name":"Sheriff",
+            "power":"",
+            "power-description":""
+        },
+        {
+            "id": "102",
+            "name":"Hypebeast",
+            "power":"",
+            "power-description":""
+        },
+        {
+            "id": "103",
+            "name":"Zoomer",
+            "power":"",
+            "power-description":""
+        },
+         {
+            "id": "104",
+            "name":"BKV-ellenőr",
+            "power":"",
+            "power-description":""
+        },
+         {
+            "id": "105",
+            "name":"Sportoló",
+            "power":"",
+            "power-description":""
+        },
+         {
+            "id": "106",
+            "name":"Náci",
+            "power":"",
+            "power-description":""
+        },
+         {
+            "id": "107",
+            "name":"Menő",
+            "power":"",
+            "power-description":""
+        },
+         {
+            "id": "108",
+            "name":"",
             "power":"",
             "power-description":""
         }
     ],
     "events":[
-
     ]
 }
