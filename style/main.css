@@ -28,14 +28,15 @@
 
 
 .page {
-    
-	position: fixed;
+    overflow-y: visible;
+    position: fixed;
 	margin-right: -50%;
 	top: 50%;
 	left: 0;
     width: 100vw;
     
     transform: translateY(-50%);
+	
 }
 
 .fullscreen-btn {
@@ -65,6 +66,13 @@
     background-color: rgba(51, 51, 51,0.9);;
     color: white;
     
+    
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
     
 }
 
@@ -188,14 +196,23 @@ button {
     height: 100%;
 }
 body {
-    height: 100%;
-      background-image: linear-gradient(#ff5f6d , #ffc371);
+      width: 100%;
       color: #fff;
+      overflow-x: hidden;
+      background-repeat:no-repeat;
+        background-attachment: fixed;
+      background-image: linear-gradient(
+        #ffd89b,
+        #19547b);
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
 .title {
     font-size: 6em;
 
+}
+:root {
+    margin: 0;
+    padding: 0;
 }
   
   /* width

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js" integrity="sha512-LfB+BcvR3zBt7ebVskhSWiSbEUiG3p5EcCprkieldsKhBeR6wpnLi0VpWC2GNgVGWP2n/skO8Bx2oKNjUhXCkw==" crossorigin="anonymous"></script>
+
+    <style>
+        .card {
+            width: 100%;
+            height: 100%;
+            
+        display: block;
+        
+            transform-style: preserve-3d;
+            transform-origin: 50% 50%;
+        position: absolute;
+        cursor: pointer;
+        box-shadow: .2em .2em .5em #333;
+        border-radius: .3em;
+        margin: 0 .5em .5em 0;
+        text-align: center;
+        font-size: 1.2em; 
+        font-weight: normal;
+        font-family: Arial, sans-serif;
+  
+    }
+        
+        .inner {
+            padding: inherit;
+  border-radius: 0.3em;
+position: absolute;
+height: 100%;
+width: 100%;
+backface-visibility: hidden;
+}
+.front {
+  
+background:cornflowerblue;
+
+}
+.back {
+
+background:gray;
+transform: rotateY( 180deg );
+}
+        .hand {   
+            position: relative;
+            left: 300px;        
+            width:  6em;
+            height: 9em;
+            
+            
+             /* -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box; */
+            
+            background-color: burlywood;
+            
+        }
+        .scene {
+            perspective: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hand scene">
+        
+        <div class="card">
+            <div class="inner front"></div>
+            <div class="inner back"></div>
+        </div>
+        <div class="card">
+            <div class="inner front"></div>
+            <div class="inner back"></div>
+        </div>
+        <div class="card">
+            <div class="inner front"></div>
+            <div class="inner back"></div>
+        </div>
+        <div class="card">
+            <div class="inner front"></div>
+            <div class="inner back"></div>
+        </div>
+        <div class="card">
+            <div class="inner front"></div>
+            <div class="inner back"></div>
+        </div>
+        
+
+    </div>
+
+    <div class="picked"></div>
+</body>
+<script>
+ let cards = document.querySelectorAll(".card");
+ let hand = document.querySelector(".hand");
+ let piced = document.querySelector(".picked");
+ let card = anime({
+     targets:".card",
+     rotate: anime.stagger([-cards.length*5,cards.length*5]),
+    //  left: anime.stagger(-100),
+    marginLeft: anime.stagger([-cards.length*15,cards.length*15]),
+    
+     easing: 'easeInOutQuad',
+ })
+ cards.forEach(card =>{
+    card.addEventListener("click", (event)=>{
+        let pick = anime({
+            targets: card,
+            keyframes: [
+                {translateY: "-120%",
+                translateX: 10,},
+                {rotateY: "180deg"},
+            ],
+            rotate: 0,
+            marginLeft: 0,
+            easing: 'easeInOutQuad',
+            
+        });
+        
+    })
+ })
+
+</script>
+</html>

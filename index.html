@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="style/cards.css">
     <script src="js/app.js" defer></script>
     <script src="js/game.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js" integrity="sha512-LfB+BcvR3zBt7ebVskhSWiSbEUiG3p5EcCprkieldsKhBeR6wpnLi0VpWC2GNgVGWP2n/skO8Bx2oKNjUhXCkw==" crossorigin="anonymous"></script>
+    <script src="js/pickcards.js" defer></script>
 </head>
 <body>
     <noscript>Javascript (ES6+) szükséges!</noscript>
@@ -44,7 +46,6 @@
             </div>
         </div>
 
-        <a href="test.html" style="color: red; font-size: large;">Ez egy teszt</a>
     </div>
     <div id="dificulty-screen" class="page">
         <div class="box">
@@ -65,7 +66,7 @@
 
         <div class="nav">
         <button class="previous round" onclick="goTo('dificulty-screen','init-screen','right')">&#8249;</button>
-        <button class="next round" onclick="goTo('dificulty-screen','showplayer-screen','left')">&#8250;</button>
+        <button class="next round" onclick="goTo('dificulty-screen','showplayer-screen','left');init()">&#8250;</button>
         </div>
     </div>
     </div>
@@ -89,12 +90,15 @@
     
     <!-- Showplayer screen -->
     <div id="showplayer-screen" class="page">
-        <button class="btn" onclick="pickCard()">"Majd átírom"</button>
-        <h1 id="pick"></h1>
-        <ul class="hand scene"></ul>
-        <ul class="picked-cards"></ul>
-
-
+        <div class="container">
+        
+            <h1 id="player-name">Valami</h1>
+        
+            <div class="hand scene"></div>
+    
+            <div class="picked"></div>    
+    </div>
+    
     </div>
         
 
@@ -106,4 +110,8 @@
     </div>
 <button class="btn fullscreen-btn" onclick="toggleFullscreen(this)"><i class="fas fa-expand"></i></button>
 </body>
+
+
+
+
 </html>

@@ -91,6 +91,7 @@ function showInfo() {
 //Add player
 //
 //
+var players;
 const nameInput = document.querySelector('.name-input');
 const nameButton = document.querySelector('.name-button');
 const nameList = document.querySelector('.name-list');
