@@ -189,7 +189,7 @@ button {
 }
 body {
     height: 100%;
-      background-image: linear-gradient(#ff5f6d , #ffc371);
+      background-image: linear-gradient(#008542 , #FFE000, #E70001);
       color: #fff;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
