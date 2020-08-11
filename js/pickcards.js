@@ -1,3 +1,4 @@
+
     let cards;
     let hand = document.querySelector(".hand");
     let picked = document.querySelector(".picked");
