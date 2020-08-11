@@ -20,8 +20,13 @@ function animate() {
         marginLeft: anime.stagger([-players.length*15,players.length*15]),
         easing: 'easeInOutQuad',
     })
+    let playing = false;
     cards.forEach(card =>{ 
         card.addEventListener("click", (event)=>{
+            if (playing) {
+                return
+            }
+            playing = true;
             let pick = anime({
                 targets: card,
                 keyframes: [
@@ -31,17 +36,33 @@ function animate() {
                 ],
                 rotate: 0,
                 marginLeft: 0,
+                endDelay: 1000,
                 easing: 'easeInOutQuad',
                 complete: function(anim) {
-                    console.log(card);
-                    card.style = "";
-                    picked.appendChild(card)
+                    playing = false;
+                    let num = card.lastChild.innerText;
+                    card.remove();
+                    picked.appendChild(statHtml("valami név",num))
                   }
             });
         });
     });
     
 }
+function statHtml(name,char) {
+    let div = document.createElement("div");
+    let h1 = document.createElement("h1");
+    h1.innerText = name;
+    let h2 = document.createElement("h2");
+    h2.innerText = char;
+    let info = document.createElement("p");
+    info.innerText = "Ide jönnek az infók, lehet egy pop up is.";
+    div.appendChild(h1)
+    div.appendChild(h2)
+    div.appendChild(info)
+    return div
+}
+
 function cardHtml(){
     let div = document.createElement("div");
     div.classList.add("card")

@@ -20,22 +20,20 @@
 
     <!-- Home screen -->
     <div id="home-screen"  class="page activated">
-        <div class="home-menu">
+        <div class="home-menu container">
             <h1 class="title">Stoner</h1>
-            
             <button class="btn" onclick="goTo('home-screen','init-screen','left')">Start</button>
             <button class="btn" onclick="goTo('home-screen','tutorial-screen','left')">Tutorial</button>
             <button class="btn" onclick="goTo('home-screen','about-screen','left')">About</button>
             
-            <button onclick="keveres()">nyomj meg (console)</button>
-            
+            <!-- <button onclick="keveres()">nyomj meg (console)</button> -->
         </div>
     </div>
 
 
     <!-- Game init screen -->
     <div id="init-screen"  class="page">
-        <div class="add-player">
+        <div class="add-player container">
             <h1>Játékosok</h1>
             <form>
                 <input class="name-input" type="text">
@@ -52,7 +50,7 @@
 
     </div>
     <div id="dificulty-screen" class="page">
-        <div class="box">
+        <div class="container">
             <h1>Nehézség</h1>
             <select id="dificulty" size="4" onchange="setDificulty(this)">
                 <option value="0">Könnyű</option>

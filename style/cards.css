@@ -43,8 +43,8 @@ transform: rotateY( 180deg );
        position: relative;
        top: 12em;
        
-  width:  9em;
-  height: 13.5em;
+      width:  9em;
+      height: 13.5em;
 
 }
 .picked > .card {
@@ -54,7 +54,7 @@ transform: rotateY( 180deg );
   height: 9em;
 }
 .picked { 
-  display: none;
+  /* display: none; */
     position: relative;
     top: 14em;
     

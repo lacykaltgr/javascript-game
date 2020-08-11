@@ -28,15 +28,11 @@
 
 
 .page {
-    overflow-y: visible;
+    overflow-y: auto;
     position: fixed;
-	margin-right: -50%;
-	top: 50%;
 	left: 0;
     width: 100vw;
-    
-    transform: translateY(-50%);
-	
+    height: 100vh;
 }
 
 .fullscreen-btn {
@@ -71,18 +67,10 @@
 .container {
     display: flex;
     flex-direction: column;
-    
     align-items: center;
-    
+    justify-content: center;
 }
 
-.home-menu, .add-player, .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    
-}
 .home-menu > .btn {
     width: 200px;
     padding: 0.5rem 1rem;
@@ -206,7 +194,6 @@ body {
     }
 .title {
     font-size: 6em;
-
 }
 :root {
     margin: 0;
