@@ -10,12 +10,34 @@ pages.forEach(page => {
 });
 
 
+let current = "home-screen";
+location.hash = current;
+
+document.addEventListener("DOMContentLoaded",(event)=>{
+
+  const btns = document.querySelectorAll("[data-to]");
+  btns.forEach(btn=>{
+    btn.onclick = function(){
+      location.hash = btn.dataset.to;
+      if (btn.classList.contains("previous")) {
+        goTo(current.replace("#",""),btn.dataset.to,"right")
+      } else {
+        goTo(current.replace("#",""),btn.dataset.to,"left")
+      }
+      current = location.hash;
+    }
+  });
+  
+  
+})
+
 function goTo(from,to,direction) {
     from_element = document.querySelector(`#${from}`);
     from_element.classList.add("deactivated", `fly-out-${direction}`);
 
     to_element = document.querySelector(`#${to}`);
     to_element.classList.add("activated",`fly-in-${direction}`);
+    location.hash = to;
 }
 
 

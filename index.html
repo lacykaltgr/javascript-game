@@ -22,9 +22,9 @@
     <div id="home-screen"  class="page activated">
         <div class="home-menu container">
             <h1 class="title">Stoner</h1>
-            <button class="btn" onclick="goTo('home-screen','init-screen','left')">Start</button>
-            <button class="btn" onclick="goTo('home-screen','tutorial-screen','left')">Tutorial</button>
-            <button class="btn" onclick="goTo('home-screen','about-screen','left')">About</button>
+            <button class="btn" data-to="init-screen">Start</button>
+            <button class="btn" data-to="tutorial-screen">Tutorial</button>
+            <button class="btn" data-to="about-screen">About</button>
             
             <!-- <button onclick="keveres()">nyomj meg (console)</button> -->
         </div>
@@ -43,7 +43,7 @@
                 <ul class="name-list"></ul>
             </div>
             <div class="nav">
-            <button class="previous round"  onclick="goTo('init-screen','home-screen','right')">&#8249;</button>
+            <button class="previous round" data-to="home-screen" >&#8249;</button>
             <button class="next round"  onclick="test()">&#8250;</button>
             </div>
         </div>
