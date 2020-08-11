@@ -64,18 +64,32 @@ function animate() {
                 targets: card,
                 keyframes: [
                     {translateY: "-120%",
-                    translateX: 10,},
-                    {rotateY: "180deg"},
+                    translateX: 10,duration: 1000,},
+                    {rotateY: "180deg",duration: 1000,delay:500},
+                    {translateY:10,opacity: 0, duration:500,delay:2000}
                 ],
                 rotate: 0,
                 marginLeft: 0,
-                endDelay: 1000,
                 easing: 'easeInOutQuad',
                 complete: function(anim) {
                     playing = false;
                     card.remove();
                     playerName.innerText = ( i+1 < players.length) ? players[i+1].name : "Mindenki választott";
-                    picked.appendChild(statHtml(players[i].name,card.dataset.info))
+                    pickedCard = statHtml(players[i].name,card.dataset.info)
+                    picked.appendChild(pickedCard)
+                    pickedCard.classList.add("picked-card")
+                    anime({
+                        targets: pickedCard,
+                        opacity: [0,1],
+                        duration: 2000,
+                        easing: 'easeInOutQuad',
+                    })
+                    anime({
+                        targets: pickedCard,
+                        translateY: -100,
+                        direction: 'reverse',
+                        easing: 'easeInOutSine'
+                      });
                     players[i].charId = card.dataset.info;
                     i++;
                   }
@@ -87,7 +101,6 @@ function animate() {
 function statHtml(name,charInfo) {
     let char = JSON.parse(charInfo)
     let div = document.createElement("div");
-    // div.classList
     if (char.id == "000") {
         div.classList.add("stoner")
     } else if (char.id .startsWith("0")) {
@@ -117,12 +130,8 @@ function cardHtml(char){
     back = document.createElement("div");
     back.classList.add("inner");
     back.classList.add("back");
-    back.innerText = `${char.id} -- ${char.name}`;
+    back.innerText = (char.name)? char.name : char.id;
     div.appendChild(front);
     div.appendChild(back);
     return div
-}
-
-Array.prototype.getRandom = function(){
-    return this[Math.floor(Math.random()*this.length)];
 }
