@@ -14,7 +14,6 @@ let current = "home-screen";
 location.hash = current;
 
 document.addEventListener("DOMContentLoaded",(event)=>{
-
   const btns = document.querySelectorAll("[data-to]");
   btns.forEach(btn=>{
     btn.onclick = function(){
@@ -27,9 +26,16 @@ document.addEventListener("DOMContentLoaded",(event)=>{
       current = location.hash;
     }
   });
-  
-  
 })
+window.addEventListener("hashchange",(event)=>{
+  location.hash = current;
+  // hogy a vissza gomb ne csináljon semmit se
+});
+window.addEventListener("beforeunload",(event)=>{
+  event.preventDefault();
+  event.returnValue = "";
+  delete event["returnValue"]
+});
 
 function goTo(from,to,direction) {
     from_element = document.querySelector(`#${from}`);
