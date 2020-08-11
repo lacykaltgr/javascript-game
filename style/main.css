@@ -140,14 +140,20 @@ form {
     
 }
 #error {
-    
+    opacity: 0;
     z-index: 100;
-    background-color: red;
+    background-color: crimson;
     color: white;
     margin-bottom: 1em;
     position: absolute;
-    width: 100%;
+    width: 90vw;
+    left: 5vw;
+    height: 30px;
     text-align: center;
+    transition: opacity ease-in-out 1s;
+}
+#error.show-error{
+    opacity: 1;
 }
 
 button {

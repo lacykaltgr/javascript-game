@@ -75,11 +75,19 @@ function toggleFullscreen(element) {
 }
 
 function alertError(msg) {
+    let error = document.querySelector('#error');
+    error.innerText = msg;
+    if (playing){return}
+    var playing = true;
     window.navigator.vibrate(300);
-    document.querySelector('#error').innerText = msg;
-    setTimeout(()=>{
-        document.querySelector('#error').innerText = "";
+    error.classList.add("show-error");
+    error.addEventListener("transitionend",()=>{
+      setTimeout(()=>{
+        error.classList.remove("show-error");
+        playing = false;
     },3000);
+    });
+    
 }
 
 //

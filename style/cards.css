@@ -53,10 +53,17 @@ transform: rotateY( 180deg );
   width: 6em;
   height: 9em;
 }
+#showplayer-screen > .container {
+  overflow-y: auto;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
 .picked { 
   /* display: none; */
-    position: relative;
-    top: 14em;
+    position: absolute;
+    /* top: 14em; */
+    top: 90vh;
     
      background-color: lawngreen;
 
