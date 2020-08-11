@@ -28,7 +28,7 @@ backface-visibility: hidden;
 }
 .front {
 
-  background-image: url("/media/back.png");
+  background-image: url("../media/back.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-color: cornsilk;

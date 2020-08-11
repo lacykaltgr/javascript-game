@@ -43,8 +43,8 @@
                 <ul class="name-list"></ul>
             </div>
             <div class="nav">
-            <button class="previous round" data-to="home-screen" >&#8249;</button>
-            <button class="next round"  onclick="test()">&#8250;</button>
+                <button class="previous round" data-to="home-screen" >&#8249;</button>
+                <button id="test-players" class="next round" data-to="dificulty-screen">&#8250;</button>
             </div>
         </div>
 
@@ -67,8 +67,8 @@
              
 
         <div class="nav">
-        <button class="previous round" onclick="goTo('dificulty-screen','init-screen','right')">&#8249;</button>
-        <button class="next round" onclick="goTo('dificulty-screen','showplayer-screen','left');init()">&#8250;</button>
+            <button class="previous round" data-to="init-screen" >&#8249;</button>
+            <button id="show-cards" class="next round" data-to="showplayer-screen">&#8250;</button>
         </div>
     </div>
     </div>
@@ -81,13 +81,13 @@
     <!-- Tutorial screen -->
     <div id="tutorial-screen" class="page">
         <h1>Tutorial</h1>
-        <button class="previous round" onclick="goTo('tutorial-screen','home-screen','right')">Vissza</button>
+        <button class="previous round" data-to="home-screen" >&#8249;</button>
     </div>   
 
     <!-- About screen -->
     <div id="about-screen" class="page">
         <h1>About</h1>
-        <button class="previous round" onclick="goTo('about-screen','home-screen','right')">Vissza</button>
+        <button class="previous round" data-to="home-screen" >&#8249;</button>
     </div>   
     
     <!-- Showplayer screen -->

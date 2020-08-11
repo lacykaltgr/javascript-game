@@ -16,7 +16,19 @@ location.hash = current;
 document.addEventListener("DOMContentLoaded",(event)=>{
   const btns = document.querySelectorAll("[data-to]");
   btns.forEach(btn=>{
-    btn.onclick = function(){
+    console.log(btn.id)
+    btn.onclick = function(){ //Majd átírom, nem lesz így jó
+      switch(btn.id) {
+        case "test-players":
+          if (!test()) {
+            return 0
+          }
+          break;
+        case "show-cards":
+          init();
+          break;
+        
+      }
       location.hash = btn.dataset.to;
       if (btn.classList.contains("previous")) {
         goTo(current.replace("#",""),btn.dataset.to,"right")
@@ -190,11 +202,13 @@ nameList.addEventListener('click', (event) => {
 
 function test() {
   if (3 < players.length && players.length < 17){
-    goTo('init-screen','dificulty-screen','left');
+    return true
   } else if (players.length < 4) {
     alertError(`Minimum négy játékos szükséges az indításhoz!`);
+    return false
   } else {
     alertError("Maximum tizenhat játékos tud résztvenni egyszerre!");
+    return false
   }
 }
 
