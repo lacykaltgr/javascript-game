@@ -1,14 +1,14 @@
 {
     "chars":[
         {
-            "id": "000",
-            "name":"Renegát",
+            "id":"000",
+            "name":"Stoner",
             "power":"",
             "power-description":""
         },
         {
-            "id":"001",
-            "name":"Stoner",
+            "id": "001",
+            "name":"Renegát",
             "power":"",
             "power-description":""
         },
