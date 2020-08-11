@@ -71,3 +71,14 @@ transform: rotateY( 180deg );
 .scene {
   perspective: 600px;
 }
+
+.stoner {
+  background-color: darkmagenta;
+}
+.villan {
+  background-color: darkred;
+}
+
+.hero {
+  background-color: darkslateblue;
+}

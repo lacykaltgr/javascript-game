@@ -16,7 +16,6 @@ location.hash = current;
 document.addEventListener("DOMContentLoaded",(event)=>{
   const btns = document.querySelectorAll("[data-to]");
   btns.forEach(btn=>{
-    console.log(btn.id)
     btn.onclick = function(){ //Majd átírom, nem lesz így jó
       switch(btn.id) {
         case "test-players":
