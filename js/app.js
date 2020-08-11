@@ -218,3 +218,18 @@ function createHTML(name) {
 String.prototype.toProperCase = function () {
   return this.charAt(0).toUpperCase() + this.substr(1).toLowerCase()
 };
+
+
+
+var textWrapper = document.querySelector('.title');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime({
+    targets: '.title .letter',
+    scale: [4,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 950,
+    delay: (el, i) => 70*i+400
+  });

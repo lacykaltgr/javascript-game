@@ -198,9 +198,16 @@ body {
       background-image: linear-gradient(#ffd89b,#19547b);
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
+
 .title {
+    font-weight: 900;
     font-size: 6em;
-}
+  }
+  
+  .title .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
 :root {
     margin: 0;
     padding: 0;
