@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="js/test.js" defer></script>
+    <style>
+    
+
+        .scene {
+            list-style-type: none;
+            position: absolute;
+            perspective: 600px;
+        }
+         
+        .card {
+            
+            position: relative;
+            cursor: pointer;
+            width: 6.6em;
+            height: 9.2em;
+            padding: .25em;
+            margin: 0 .5em .5em 0;
+            text-align: center;
+            font-size: 1.2em; 
+            font-weight: normal;
+            font-family: Arial, sans-serif;
+            
+        }
+        .card:hover {
+            transform:  translate(0,-1em);
+            
+            }
+        .card {
+            transition: transform 1s;
+            transform-style: preserve-3d;
+        }
+        .card__face {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+
+            border: 1px solid #666;
+            /* -moz-box-shadow: .2em .2em .5em #333;
+            -webkit-box-shadow: .2em .2em .5em #333; */
+            box-shadow: .2em .2em .5em #333;
+            border-radius: .3em;
+            /* -moz-border-radius: .3em;
+            -webkit-border-radius: .3em;
+            -khtml-border-radius: .3em; */
+        }
+        .card__face--front {
+            background-image: url("media/back.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: cornsilk;
+        }
+        .card__face--back {
+            background:gray;
+            transform: rotateY( 180deg );
+        }
+        .card.is-flipped { 
+            transform: rotateY(180deg);
+        }
+        .choosed > .card {
+            display: block;
+        }
+        .choosed {
+            flex-flow: row;
+        }
+
+        .oldal {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-flow: column wrap;
+            align-items: center;
+        }
+        .info {
+            display: flex;
+            height: 30vh;
+            flex-flow: column wrap;
+            align-items: center;
+        }
+        .hand {
+            display: flex;
+            flex-flow: column;
+            align-items:center;
+            background-color: burlywood;
+            width: 100vw;
+            height: 300px;
+        }
+        ul {
+            padding: 0;
+            display: flex;
+            flex-flow: column wrap;
+            align-items:center;
+            height: 300px;
+            width: 300px;
+            position:absolute;
+            left: calc(50%-300px);
+            background-color: cadetblue;
+          
+           
+        }
+        .center {
+            left: 0;
+            transform: rotate(0deg) scale(1.3) translate(20vw, -25vh);
+            transition: transform .8s cubic-bezier(0, 0, 0.24, 1.04) 0s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="oladl">
+        <div class="info">
+            <h2>Választ:</h2>
+            <h1 id="name"></h1>
+        </div>
+        <div class="hand">
+            <ul id="choice">
+            </ul>
+        </div>
+    
+        <div class="choosed">
+        </div>
+    </div>
+</body>
+</html>

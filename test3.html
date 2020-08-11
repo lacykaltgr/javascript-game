@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.scene {
+	
+    perspective: 500px;
+}
+.card {
+  
+  position: absolute;
+  cursor: pointer;
+  width: 6.6em;
+  height: 9.2em;
+  box-shadow: .2em .2em .5em #333;
+  border-radius: .3em;
+  
+  margin: 0 .5em .5em 0;
+  text-align: center;
+  font-size: 1.2em; 
+  font-weight: normal;
+  font-family: Arial, sans-serif;
+  
+}
+.front:hover{
+    border: brown solid;
+}
+.example {
+    transform-style: preserve-3d;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  
+}
+.inner {
+    border-radius: 0.3em;
+position: absolute;
+height: 100%;
+width: 100%;
+backface-visibility: hidden;
+}
+.front {
+    
+  background:blue;
+  
+  }
+.back {
+
+  background:gray;
+  transform: rotateY( 180deg );
+}
+@keyframes example {
+  15%   {
+  transform:  translate(150px, -100px) rotateX(0);
+  }
+  45%  {
+  transform: translate(100px, 100px) scale(1.3);
+
+}
+  100% {
+  transform: translate(100px, 100px) scale(1.3) rotateY(180deg) ;
+  }
+}
+#picked > .card {
+    pointer-events: none;
+    position: relative;
+    left: 300px;
+}
+</style>
+<script src="js/test3.js" defer></script>
+</head>
+<body>
+
+<ul class="hand scene">
+  <li class="card">
+    <div class="inner front">Front</div>
+    <div class="inner back">Back</div>
+  </li>
+  <li class="card">
+    <div class="inner front">Front</div>
+    <div class="inner back">Back</div>
+  </li>
+</ul>
+
+<ul id="picked">
+
+</ul>
+</body>
+</html>
+

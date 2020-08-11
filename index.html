@@ -8,45 +8,49 @@
     <link rel="stylesheet" href="style/fun.css">
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/cards.css">
-    <script src="js/data.js" defer></script>
     <script src="js/app.js" defer></script>
-    <script src="js/addplayer.js" defer></script>
-    <script src="js/setdificulty.js" defer></script>
     <script src="js/game.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js" integrity="sha512-LfB+BcvR3zBt7ebVskhSWiSbEUiG3p5EcCprkieldsKhBeR6wpnLi0VpWC2GNgVGWP2n/skO8Bx2oKNjUhXCkw==" crossorigin="anonymous"></script>
+    <script src="js/pickcards.js" defer></script>
+    <script src="js/randomiser.js" defer></script>
 </head>
 <body>
     <noscript>Javascript (ES6+) szükséges!</noscript>
-    <span id="error"></span>
-
+    <div id="error" class=""></div>
+    
     <!-- Home screen -->
     <div id="home-screen"  class="page activated">
-        <div class="home-menu">
+        <div class="home-menu container">
             <h1 class="title">Stoner</h1>
+            <button class="btn" data-to="init-screen">Start</button>
+            <button class="btn" data-to="tutorial-screen">Tutorial</button>
+            <button class="btn" data-to="about-screen">About</button>
             
-            <button onclick="goTo('home-screen','init-screen','left')">Start</button>
-            <button onclick="goTo('home-screen','tutorial-screen','left')">Tutorial</button>
-            <button onclick="goTo('home-screen','about-screen','left')">About</button>
+            <!-- <button onclick="keveres()">nyomj meg (console)</button> -->
         </div>
     </div>
 
 
     <!-- Game init screen -->
     <div id="init-screen"  class="page">
-        <div class="add-player">
+        <div class="add-player container">
+            <h1>Játékosok</h1>
             <form>
                 <input class="name-input" type="text">
-                <button class="name-button" type="submit">Add</button>
+                <button class="btn name-button" type="submit">Add</button>
             </form>
-            <h3>Játékosok</h3>
             <div class=name-container>
                 <ul class="name-list"></ul>
             </div>
+            <div class="nav">
+            <button class="previous round" data-to="home-screen" >&#8249;</button>
+            <button class="next round"  onclick="test()">&#8250;</button>
+            </div>
         </div>
-        <button onclick="goTo('init-screen','home-screen','right')">Vissza</button>
-        <button onclick="goTo('init-screen','dificulty-screen','left')">Tovább</button>
+
     </div>
     <div id="dificulty-screen" class="page">
-        <div>
+        <div class="container">
             <h1>Nehézség</h1>
             <select id="dificulty" size="4" onchange="setDificulty(this)">
                 <option value="0">Könnyű</option>
@@ -54,9 +58,19 @@
                 <option value="2">Nehéz</option>
                 <option value="3">Hardcore</option>
               </select>
+              <p id="info"></p>
+               <div class="check-box">
+                <label for="tutorial">Tutorial mutatása:
+                <input name="tutorial" type="checkbox" checked>
+                </label>
+                </div>
+             
+
+        <div class="nav">
+        <button class="previous round" onclick="goTo('dificulty-screen','init-screen','right')">&#8249;</button>
+        <button class="next round" onclick="goTo('dificulty-screen','showplayer-screen','left');init()">&#8250;</button>
         </div>
-        <button onclick="goTo('dificulty-screen','init-screen','right')">Vissza</button>
-        <button onclick="goTo('dificulty-screen','game-screen','left')">Tovább</button>
+    </div>
     </div>
     
     <!-- Settings screen -->
@@ -67,21 +81,36 @@
     <!-- Tutorial screen -->
     <div id="tutorial-screen" class="page">
         <h1>Tutorial</h1>
-        <button onclick="goTo('tutorial-screen','home-screen','right')">Vissza</button>
+        <button class="previous round" onclick="goTo('tutorial-screen','home-screen','right')">Vissza</button>
     </div>   
 
     <!-- About screen -->
     <div id="about-screen" class="page">
         <h1>About</h1>
-        <button onclick="goTo('about-screen','home-screen','right')">Vissza</button>
-    </div>     
+        <button class="previous round" onclick="goTo('about-screen','home-screen','right')">Vissza</button>
+    </div>   
+    
+    <!-- Showplayer screen -->
+    <div id="showplayer-screen" class="page">
+        <div class="container">
+        
+            <h1 id="player-name">Valami</h1>
+        
+            <div class="hand scene"></div>
+    
+            <div class="picked"></div>    
+    </div>
+    
+    </div>
+        
 
     <!-- Game screen -->
     <div id="game-screen" class="page">
-        <div id="stands">
-        </div>
-        <button id="start" onclick="start()">start</button>
+        <div id="cardHolder"></div>        
+        <button class="next round" id="next" onclick="nextCard()">következő</button>
+
     </div>
-<button onclick="toggleFullscreen(this)"><i class="fas fa-expand"></i></button>
+<button class="btn fullscreen-btn" onclick="toggleFullscreen(this)"><i class="fas fa-expand"></i></button>
 </body>
 </html>
+

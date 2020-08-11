@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+.scene {
+            
+            list-style-type: none;
+            position: absolute;
+            perspective: 600px;
+        }
+         
+        .card {
+            
+            position: relative;
+            cursor: pointer;
+            width: 6.6em;
+            height: 9.2em;
+            padding: .25em;
+            margin: 0 .5em .5em 0;
+            text-align: center;
+            font-size: 1.2em; 
+            font-weight: normal;
+            font-family: Arial, sans-serif;
+        
+            transition: all 1.25s;
+            transform-style: preserve-3d;
+        }
+        .card__face {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+
+            border: 1px solid #666;
+            /* -moz-box-shadow: .2em .2em .5em #333;
+            -webkit-box-shadow: .2em .2em .5em #333; */
+            box-shadow: .2em .2em .5em #333;
+            border-radius: .3em;
+            /* -moz-border-radius: .3em;
+            -webkit-border-radius: .3em;
+            -khtml-border-radius: .3em; */
+        }
+        .card__face--front {
+            background-image: url("media/back.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: cornsilk;
+        }
+        .card__face--back {
+            background:gray;
+            transform: rotateY( 180deg );
+        }
+        .card.is-flipped { 
+            transform: rotateY(180deg) translateX(-14em) translateZ(0) scale(1.5) ;
+            transform-origin: 50% 50%;
+            -webkit-font-smoothing: subpixel-antialiased;
+            
+        }
+        .deck, .card-history {
+            position: fixed;
+            top: 30vh;
+        }
+    </style>
+    <script src="js/test2.js" defer></script>
+</head>
+<body>
+    <ul class="card-history"></ul>
+    <ul class="deck">
+    </ul>
+</body>
+</html>
