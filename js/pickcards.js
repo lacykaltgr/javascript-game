@@ -76,6 +76,7 @@ function animate() {
                     card.remove();
                     playerName.innerText = ( i+1 < players.length) ? players[i+1].name : "Mindenki választott";
                     picked.appendChild(statHtml(players[i].name,card.dataset.info))
+                    players[i].charId = card.dataset.info;
                     i++;
                   }
             });
