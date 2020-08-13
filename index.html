@@ -100,7 +100,7 @@
             <button data-to="game-screen" id="to-game" class="btn" style="display: none;">Tovább</button>
             <div class="hand scene"></div>
     
-            <div class="picked"></div>    
+            <div class="picked"></div> 
             
     </div>
     
@@ -108,8 +108,14 @@
 
     <!-- Game screen -->
     <div id="game-screen" class="page">
-        <div class="deck"></div>
-        
+    <div>
+        <ul class="card-on"></ul>
+        <div class="pick">
+            <h1>Round: <span id="round"></span></h1> 
+            <ul class="deck"></ul>
+            <ul class="card-history"></ul>
+        </div>
+    </div>
     </div>
 
     <button class="btn fullscreen-btn" onclick="toggleFullscreen(this)"><i class="fas fa-expand"></i></button>
