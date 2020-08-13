@@ -33,18 +33,12 @@ async function makeCharDeck(){
 }
 
 function init() { 
+    playerName.innerText = players[0].name;
     makeCharDeck().then(()=>{
         shuffle([...charsDeck]).forEach(char => {
             card = cardHtml(char)
             hand.appendChild(card);
         });
-        animate();
-        playerName.innerText = players[0].name
-    })
-}
-    
-    
-function animate() {
     cards = document.querySelectorAll(".card");
     let rotate = anime({
         targets:".card",
@@ -64,9 +58,9 @@ function animate() {
                 targets: card,
                 keyframes: [
                     {translateY: "-120%",
-                    translateX: 10,duration: 1000,},
-                    {rotateY: "180deg",duration: 1000,delay:500},
-                    {translateY:10,opacity: 0, duration:500,delay:2000}
+                    translateX: 10,duration: 600,},
+                    {rotateY: "180deg",duration: 400,delay:300},
+                    {translateY:10,opacity: 0, duration:500,delay:1200}
                 ],
                 rotate: 0,
                 marginLeft: 0,
@@ -78,6 +72,7 @@ function animate() {
                     pickedCard = statHtml(players[i].name,card.dataset.info)
                     picked.appendChild(pickedCard)
                     pickedCard.classList.add("picked-card")
+                    
                     anime({
                         targets: pickedCard,
                         opacity: [0,1],
@@ -91,13 +86,18 @@ function animate() {
                         easing: 'easeInOutSine'
                       });
                     players[i].charId = card.dataset.info;
+                    console.log(i)
+                    if (i+1 == players.length) {
+                        document.querySelector("#to-game").style.display = "block";
+                    }
                     i++;
                   }
             });
         });
     });
-    
+    })
 }
+    
 function statHtml(name,charInfo) {
     let char = JSON.parse(charInfo)
     let div = document.createElement("div");

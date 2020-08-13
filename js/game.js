@@ -1,35 +1,36 @@
 // import {shuffle} from "./rand.js"
 
-function pickCard() {
-    let hand = document.querySelector(".hand"); 
-    let pick = document.querySelector("#pick");
-    let pickedCards = document.querySelector(".picked-cards");
-    let i = 1;
-    pick.innerText = players[0].name;
-    players.forEach((player)=>{
-        let card = cardHtml();
-        hand.appendChild(card);
-        card.addEventListener("click", (event)=>{
-            pick.innerText = players[i].name;
-            pickedCards.appendChild(card);
-            i++;
-        });
-    });    
-}
-function cardHtml(){
-    let li = document.createElement("li");
-    li.classList.add("card")
-    let front = document.createElement("div");
-    front.classList.add("inner");
-    front.classList.add("front");
-    back = document.createElement("div");
-    back.classList.add("inner");
-    back.classList.add("back");
-    back.innerText = Math.round(Math.random()*100);
-    li.appendChild(front);
-    li.appendChild(back);
-    return li
-}
+
+// function pickCard() {
+//     let hand = document.querySelector(".hand"); 
+//     let pick = document.querySelector("#pick");
+//     let pickedCards = document.querySelector(".picked-cards");
+//     let i = 1;
+//     pick.innerText = players[0].name;
+//     players.forEach((player)=>{
+//         let card = cardHtml();
+//         hand.appendChild(card);
+//         card.addEventListener("click", (event)=>{
+//             pick.innerText = players[i].name;
+//             pickedCards.appendChild(card);
+//             i++;
+//         });
+//     });    
+// }
+// function cardHtml(){
+//     let li = document.createElement("li");
+//     li.classList.add("card")
+//     let front = document.createElement("div");
+//     front.classList.add("inner");
+//     front.classList.add("front");
+//     back = document.createElement("div");
+//     back.classList.add("inner");
+//     back.classList.add("back");
+//     back.innerText = Math.round(Math.random()*100);
+//     li.appendChild(front);
+//     li.appendChild(back);
+//     return li
+// }
 
 // var charIDarrayvill = ["101", "102", "103", "104"]
 // var charIDarrayhero = ["001", "002", "003"]
