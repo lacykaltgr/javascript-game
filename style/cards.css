@@ -134,11 +134,17 @@ transform: rotateY( 180deg );
   transform: rotateY( 180deg );
 }
 .card-on {
-  position: relative;
-  top: 5em;
   height: 200px;
+  margin: 3em;
+  padding-right: 24em;
 }
 .pick {
-  position: relative;
-  top:4em;
+  margin: 0;
+  padding-right: 12em;
+}
+.card-history {
+  width: 6.6em;
+  height: 9.2em;
+  
+  
 }
