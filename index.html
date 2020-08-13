@@ -24,6 +24,7 @@
         <div class="home-menu container">
             <h1 class="title">Stoner</h1>
             <button class="btn" data-to="init-screen">Start</button>
+            <button class="btn" data-to="game-screen">Kártyák</button>
             <button class="btn" data-to="tutorial-screen">Tutorial</button>
             <button class="btn" data-to="about-screen">About</button>
             
@@ -62,7 +63,7 @@
               <p id="info"></p>
                <div class="check-box">
                 <label for="tutorial">Tutorial mutatása:
-                <input name="tutorial" type="checkbox" checked>
+                    <input name="tutorial" type="checkbox" checked>
                 </label>
                 </div>
              
@@ -96,22 +97,28 @@
         <div class="container">
         
             <h1 id="player-name">Valami</h1>
-        
+            <button data-to="game-screen" id="to-game" class="btn" style="display: none;">Tovább</button>
             <div class="hand scene"></div>
     
-            <div class="picked"></div>    
+            <div class="picked"></div> 
+            
     </div>
     
     </div>
-        
 
     <!-- Game screen -->
     <div id="game-screen" class="page">
-        <div id="cardHolder"></div>        
-        <button class="next round" id="next" onclick="nextCard()">következő</button>
-
+    <div>
+        <ul class="card-on"></ul>
+        <div class="pick">
+            <h1>Round: <span id="round"></span></h1> 
+            <ul class="deck"></ul>
+            <ul class="card-history"></ul>
+        </div>
     </div>
-<button class="btn fullscreen-btn" onclick="toggleFullscreen(this)"><i class="fas fa-expand"></i></button>
+    </div>
+
+    <button class="btn fullscreen-btn" onclick="toggleFullscreen(this)"><i class="fas fa-expand"></i></button>
 </body>
 </html>
 

@@ -6,14 +6,14 @@
     <title>Document</title>
 
     <style>
-.scene {
+.event-scene {
             
             list-style-type: none;
             position: absolute;
             perspective: 600px;
         }
          
-        .card {
+        .event-card {
             
             position: relative;
             cursor: pointer;
@@ -26,7 +26,7 @@
             font-weight: normal;
             font-family: Arial, sans-serif;
         
-            transition: all 1.25s;
+            /* transition: all 1.25s; */
             transform-style: preserve-3d;
         }
         .card__face {
@@ -55,21 +55,27 @@
             transform: rotateY( 180deg );
         }
         .card.is-flipped { 
-            transform: rotateY(180deg) translateX(-14em) translateZ(0) scale(1.5) ;
-            transform-origin: 50% 50%;
-            -webkit-font-smoothing: subpixel-antialiased;
+            /* transition-delay: 2s;
+            transform: rotateY(180deg) translateX(-14em)  scale(1.5) ;
+            -webkit-font-smoothing: subpixel-antialiased; */
+            /* animation: flipped 2s forwards; */
             
         }
-        .deck, .card-history {
-            position: fixed;
-            top: 30vh;
-        }
+        /* @keyframes flipped {
+            50%  {transform: translateX(14em)}
+            80% {transform: translateX(14em) rotateY(180deg);}
+            100% {transform: translateX(14em) rotateY(180deg) scale(1.5);}
+        } */
+        
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js" integrity="sha512-LfB+BcvR3zBt7ebVskhSWiSbEUiG3p5EcCprkieldsKhBeR6wpnLi0VpWC2GNgVGWP2n/skO8Bx2oKNjUhXCkw==" crossorigin="anonymous"></script>
     <script src="js/test2.js" defer></script>
 </head>
 <body>
-    <ul class="card-history"></ul>
-    <ul class="deck">
-    </ul>
+    <ul class="card-on"></ul>
+    <div>
+        <ul class="deck"></ul>
+        <ul class="card-history"></ul>
+    </div>
 </body>
 </html>

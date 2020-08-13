@@ -3,6 +3,8 @@
 let topCard = document.querySelector("#top-card");
 let deck = document.querySelector(".deck");
 let CardHistory = document.querySelector(".card-history")
+let CardOn = document.querySelector(".card-on")
+let i = 0;
 
 function createCardNode(text) {
     let li = document.createElement("li");
@@ -22,16 +24,35 @@ function createCardNode(text) {
     li.appendChild(card);
 
     front.addEventListener("click", (event)=>{
+        li.style.zIndex = i;
         deck.insertBefore(createCardNode("hi"),li);
-
-        card.classList.add("is-flipped");
+        anime({
+            targets: card,
+                translateX:"10em",
+                rotateY:"180deg",
+                duration: 3000,
+                easing: 'spring(1, 30, 11, 0)',
+                complete: function(anim) {
+                    CardOn.innerHTML = "";
+                    CardHistory.innerHTML = "";
+                    CardHistory.appendChild(card.cloneNode(true));
+                    CardOn.appendChild(card.cloneNode(true))
+                    li.remove()
+                    i++;
+                    anime({
+                        targets: ".card-on > .card",
+                        scale: 1.4,
+                        duration:1500,
+                    })
+                }
+        })
         
-        card.addEventListener("transitionend", (event)=>{
-            CardHistory.innerHTML = "";
-            card.style.zIndex = "-100"
-            CardHistory.appendChild(card);
-            li.remove()
-        });
+        
+        // card.addEventListener("animationend", (event)=>{
+        //     CardHistory.innerHTML = "";
+        //     CardHistory.appendChild(card);
+        //     li.remove()
+        // });
     });
 
     return li;
