@@ -74,11 +74,42 @@
         },
          {
             "id": "108",
+            "name":"Tolvaj",
+            "power":"",
+            "power-description":""
+        },
+        {
+            "id": "109,
+            "name":"Nyugdíjas
+            "power":"",
+            "power-description":""
+        },
+        {
+            "id": "110
             "name":"",
             "power":"",
             "power-description":""
         }
     ],
     "events":[
+        "Ha az óra páratlan percet mutat mindenki, ha párosat {name} iszik.",
+        "{name} te döntesz, hogy ki öltözött rosszabban, mint {name}." //Hypebeast, Fashion Check
+        "Ha a mostani aoutfited többe kerül mint 100k, iszol." //Hypebeast Gucci gang
+        "Aki alacsonyabb, mint {name} az iszik.",
+        "Natalie Portman vagy Emma Watson? Alulmaradók isznak.",
+        "Shawn Mendes vagy Timothee Chalamet? Alulmaradók isznak.",
+        "{name} szereted az ölelést ma este. Akárhányszor hozzáérsz valakinek a nyakához, innia kell.",
+        "Ha van barátnőd/barátod kioszthatsz egy piát.",
+        "{name} {name} karaktert cserélnek.", //spec
+        "'A részegség egyik előnye ...', az első ember, aki nem tud újjat mondani iszik",
+        "Agyj ki kettő kortyot annak akit a legjobban szeretsz.",
+        "Ezen túl {name} iszik meg minden italt, amit kiosztana másoknak.",
+        "'Soha nem csinálom többet ...', az első ember, aki nem tud újjat mondani iszik",
+        "Mindenki mond egy sort a Nemzeti dalból. {name} kezdi, akinél elakad az iszik.",
+        "{name}. Válassz valamit amit nagyon szeretsz. Akik nem szeretik azok isznak, de ha senki más nem szereti rajtad kívűl, akkor te iszol."
+        "{name}. Igyál amennyit akarsz, de {name}-nek kétszer annyit kell innia.",
+        "Mostantól tilos cigire rágyújtani. Meg kell innod az egész italodat, ha meg akarod szegni az új törvényt.",
+        "Aki egyedül él, az iszik" //Nyugdíjas, macskák
+        "{name}: Mostantól kezdve csak más poharából ihatsz."//Tolvaj 
     ]
 }
